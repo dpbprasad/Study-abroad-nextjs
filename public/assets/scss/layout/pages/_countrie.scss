@@ -1,0 +1,135 @@
+@use "../../utils" as *;
+
+/*---------------------------------
+    Countries Section - Original Styles
+---------------------------------*/
+
+/**countries**/
+.countries {
+    &__tab {
+        padding: 40px;
+        border-bottom: none;
+        border-radius: 0px 0px 20px 20px;
+        box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
+
+        @media #{$lg} {
+            margin-bottom: 40px;
+        }
+        @media #{$md} {
+            margin-bottom: 40px;
+        }
+        @media #{$sm} {
+            margin-bottom: 40px;
+        }
+        @media #{$xs} {
+            margin-bottom: 40px;
+        }
+
+        li {
+            display: inline-block;
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+                border-bottom: 1px solid #E3DBD8;
+            }
+
+            button {
+                width: 100%;
+                display: flex;
+                font-size: 22px;
+                font-style: normal;
+                align-items: center;
+                line-height: 30px;
+                font-weight: var(--rr-fw-bold);
+                justify-content: space-between;
+                font-family: var(--rr-ff-heading);
+                color: rgba(3, 72, 51, 0.3);
+
+                i {
+                    color: #034833;
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+
+                &.active {
+                    color: #034833;
+                }
+            }
+        }
+    }
+
+    &__tab-content {
+        column-count: 2;
+        column-gap: 30px;
+
+        @media #{$xs} {
+            column-count: 1;
+        }
+
+        &__countries-name {
+            gap: 30px;
+            padding: 19px 30px;
+            border-radius: 20px;
+            align-items: center;
+            transition: all 0.3s;
+            border: 1px solid #E3DBD8;
+
+            &:hover {
+                border-color: var(--rr-theme-primary);
+
+                img {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @media #{$sm} {
+                gap: 15px;
+                padding: 19px 10px;
+            }
+            @media #{$xs} {
+                gap: 15px;
+                padding: 19px 10px;
+            }
+
+            img {
+                max-width: 80px;
+                height: 80px;
+                border-radius: 500px;
+                border: 1px solid var(--rr-theme-primary);
+                transition: all 0.3s ease;
+
+                h5 {
+                    font-size: 22px;
+                    font-style: normal;
+                    font-family: var(--rr-ff-heading);
+                    color: var(--rr-heading-primary);
+                    font-weight: var(--rr-fw-bold);
+                }
+            }
+
+            h5 {
+                font-size: 22px;
+                font-style: normal;
+                font-family: var(--rr-ff-heading);
+                color: var(--rr-heading-primary);
+                font-weight: var(--rr-fw-bold);
+                margin: 0;
+            }
+        }
+    }
+}
+
+.tab {
+    &__wrap {
+        button {
+            color: var(--rr-heading-primary) !important;
+
+            &.active {
+                color: var(--rr-theme-primary) !important;
+            }
+        }
+    }
+}

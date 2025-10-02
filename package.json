@@ -2,6 +2,14 @@
   "name": "study-abroad-nextjs",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Danushka Bandara",
+    "url": "https://danushkabandara.com/"
+  },
+  "organization": {
+    "name": "BINARIZE",
+    "url": "https://www.binarizeweb.com/"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,17 +17,22 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
+    "framer-motion": "^12.23.22",
+    "next": "15.5.4",
     "react": "19.1.0",
+    "react-bootstrap": "^2.10.10",
+    "react-countup": "^6.5.3",
     "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "swiper": "^12.0.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }
