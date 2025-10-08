@@ -1,0 +1,57 @@
+/* Active state styling for country tabs */
+.countries__tab .tab__btn.active {
+  color: #83CD20 !important;
+}
+
+/* Increase gap between country category sidebar and content section */
+.countries.section-space .row > .col-lg-4 {
+  padding-right: 30px;
+}
+
+.countries.section-space .row > .col-lg-8 {
+  padding-left: 30px;
+}
+
+/* Make country category sidebar sticky when scrolling */
+.countries.section-space .row {
+  align-items: flex-start;
+}
+
+.service-sidebar-sticky {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fixed positioning - sticks to top when scrolling */
+.service-sidebar-sticky.is-fixed {
+  position: fixed;
+  top: 135px;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Width is set inline via JavaScript to maintain exact dimensions */
+}
+
+/* Absolute positioning - sticks to bottom when footer is near */
+.service-sidebar-sticky.is-absolute {
+  position: absolute;
+  bottom: 15px;
+  top: auto;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Width is set inline via JavaScript to maintain exact dimensions */
+}
+
+/* Ensure parent container has relative positioning */
+.countries.section-space.tab.overflow-hidden {
+  position: relative;
+}
+
+/* Disable sticky on mobile */
+@media (max-width: 991px) {
+  .service-sidebar-sticky.is-fixed,
+  .service-sidebar-sticky.is-absolute {
+    position: relative !important;
+    top: 0 !important;
+    bottom: auto !important;
+    width: 100% !important;
+  }
+}

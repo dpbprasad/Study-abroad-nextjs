@@ -58,6 +58,8 @@ export default function Header() {
                           <Link href="/countries">Countries</Link>
                           <ul className="submenu">
                             <li><Link href="/countries">Countries</Link></li>
+                            <li><Link href="/country-info">Country Info (Modern)</Link></li>
+                            <li><Link href="/country-details-sample2">Country Details Sample 2</Link></li>
                             <li><Link href="/countries/details">Country Details</Link></li>
                           </ul>
                         </li>

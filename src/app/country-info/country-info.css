@@ -1,0 +1,90 @@
+/* Country Info Page - Modern UI Styles */
+
+.countries-modern {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 60px 0;
+}
+
+/* Smooth animations for cards */
+.countries-modern .row > div {
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for sidebar */
+.countries-modern .col-lg-3 > div::-webkit-scrollbar {
+  width: 6px;
+}
+
+.countries-modern .col-lg-3 > div::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.countries-modern .col-lg-3 > div::-webkit-scrollbar-thumb {
+  background: #83CD20;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .countries-modern .col-lg-3 > div {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .countries-modern {
+    padding: 40px 0;
+  }
+
+  .countries-modern h2 {
+    font-size: 26px !important;
+  }
+
+  .countries-modern h3 {
+    font-size: 20px !important;
+  }
+}
+
+/* Tab content transitions */
+.countries-modern .col-lg-9 > div {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Print styles */
+@media print {
+  .countries-modern .col-lg-3 {
+    display: none;
+  }
+
+  .countries-modern .col-lg-9 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .countries-modern button {
+    display: none !important;
+  }
+}
