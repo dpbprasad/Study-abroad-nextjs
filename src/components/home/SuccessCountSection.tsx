@@ -14,7 +14,7 @@ export default function SuccessCountSection({ grayBg = true }: SuccessCountSecti
   const counter4Ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const animateCounter = (ref: React.RefObject<HTMLSpanElement>, target: number, suffix: string = '') => {
+    const animateCounter = (ref: React.RefObject<HTMLSpanElement | null>, target: number, suffix: string = '') => {
       if (ref.current) {
         let count = 0;
         const duration = 2000;
@@ -43,16 +43,180 @@ export default function SuccessCountSection({ grayBg = true }: SuccessCountSecti
 
   return (
     <section className={`section-space-bottom counter position-relative overflow-hidden${grayBg ? ' gray-bg' : ''}`}>
+      <style jsx>{`
+        /* FAQ Content Box - Responsive */
+        .faq-content-wrapper {
+          height: 394px;
+          min-height: 300px;
+        }
+
+        /* Counter Row - Responsive Width */
+        .counter-row-wrapper {
+          width: 100%;
+          max-width: 865px;
+          margin: 0 auto;
+        }
+
+        /* Responsive Image */
+        .faq__media img,
+        .faq__content-right-img img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        /* Large Desktop (1400px and above) - Default styles */
+        @media (min-width: 1400px) {
+          .faq-content-wrapper {
+            height: 416px;
+          }
+          .counter-row-wrapper {
+            max-width: 865px;
+          }
+        }
+
+        /* Medium Desktop (1200px - 1399px) */
+        @media (max-width: 1399px) and (min-width: 1200px) {
+          .faq-content-wrapper {
+            height: auto;
+            min-height: 350px;
+          }
+          .counter-row-wrapper {
+            max-width: 100%;
+            padding: 38px;
+          }
+          .faq-padding {
+            padding: 20px 10px 20px 20px !important;
+          }
+        }
+
+        /* Small Desktop / Large Tablet (992px - 1199px) */
+        @media (max-width: 1199px) and (min-width: 992px) {
+          .faq-content-wrapper {
+            height: 330px;
+          }
+          .counter-row-wrapper {
+            max-width: 100%;
+            padding: 10px;
+            height: 103px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .faq__content-text.faq-padding {
+            padding: clamp(20px, 3vw, 30px) !important;
+          }
+          .counter__item-title {
+            font-size: 30px !important;
+            line-height: 30px !important;
+          }
+          .counter-row-wrapper .counter__item-title {
+            font-size: 30px !important;
+            line-height: 30px !important;
+          }
+          .counter-row-wrapper .counter__item-title span {
+            font-size: 30px !important;
+            line-height: 30px !important;
+          }
+          .counter-row-wrapper .counter-col {
+            flex: 0 0 25%;
+            max-width: 25%;
+          }
+        }
+
+        /* Tablet (768px - 991px) */
+        @media (max-width: 991px) and (min-width: 768px) {
+          .faq__media {
+            margin-bottom: 30px;
+          }
+          .faq-content-wrapper {
+            height: auto;
+            min-height: 280px;
+          }
+          .counter-row-wrapper {
+            max-width: 100%;
+            padding: 20px;
+            margin-top: 20px !important;
+          }
+          .counter-col {
+            display: flex;
+            justify-content: center;
+          }
+          .counter-col .counter__item {
+            text-align: center;
+          }
+          .faq__content-right-img {
+            display: none !important;
+          }
+        }
+
+        /* Mobile (below 768px) */
+        @media (max-width: 767px) {
+          .faq__media {
+            margin-bottom: 25px;
+          }
+          .faq-content-wrapper {
+            height: auto !important;
+            min-height: auto !important;
+            flex-direction: column !important;
+          }
+          .faq__content-right-img {
+            display: none !important;
+          }
+          .faq__content-text.faq-padding {
+            padding: 25px !important;
+          }
+          .counter-row-wrapper {
+            max-width: 100%;
+            padding: 0;
+            margin-top: 20px !important;
+          }
+          .counter__item {
+            margin-bottom: 20px;
+          }
+          /* Stack counter items 2 per row on mobile */
+          .counter-col {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+
+        /* Extra Small Mobile (below 576px) */
+        @media (max-width: 575px) {
+          .faq__content-text.faq-padding {
+            padding: 20px !important;
+          }
+          .faq__content-text h5 {
+            font-size: clamp(18px, 4vw, 22px) !important;
+          }
+          .faq__content-text p {
+            font-size: clamp(14px, 3vw, 16px) !important;
+          }
+          /* Full width on very small screens */
+          .counter-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+      `}</style>
+
       <div className="faq__area">
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            {/* Left Column - Image */}
+            <div className="col-lg-4 col-md-12">
               <div className="faq__media" data-tilt>
-                <img src="/assets/img/success-count/success-left.png" alt="img not found" />
+                <img
+                  src="/assets/img/success-count/success-left.png"
+                  alt="Success Journey Illustration"
+                />
               </div>
             </div>
-            <div className="col-md-8">
-              <div className="faq__content white-bg d-flex faq-radius position-relative overflow-hidden mb-30 border">
+
+            {/* Right Column - Content & Counters */}
+            <div className="col-lg-8 col-md-12">
+              {/* FAQ Content Box */}
+              <div className="faq__content white-bg d-flex faq-radius position-relative overflow-hidden mb-20 border faq-content-wrapper">
                 <div className="faq__content-text faq-padding">
                   <div className="faq__content-text-icon wow fadeInLeft animated" data-wow-delay=".2s">
                     <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,45 +236,50 @@ export default function SuccessCountSection({ grayBg = true }: SuccessCountSecti
                     Start Your Global Education Journey Today
                   </h5>
                   <p className="wow fadeInLeft animated" data-wow-delay=".4s">
-                    Lorem Ipsum is simply dummy text the printing and typese <br /> Lorem Ipsum has been the industry's standard dummy
+                    Lorem Ipsum is simply dummy text the printing and typese <br className="d-none d-lg-block" /> Lorem Ipsum has been the industry's standard dummy
                   </p>
                   <Link href="/contact" className="rr-btn2 mt-25 wow fadeInLeft animated" data-wow-delay=".5s">
                     Contact us <i className="fa-solid fa-arrow-right"></i>
                   </Link>
                 </div>
                 <div className="faq__content-right-img wow fadeInLeft animated" data-wow-delay=".6s">
-                  <img src="/assets/img/success-count/success-right.png" alt="img not found" />
+                  <img
+                    src="/assets/img/success-count/success-right.png"
+                    alt="Global Education"
+                  />
                 </div>
               </div>
-              <div className="row counter__bg mt-30 mb-minus-20">
-                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                  <div className="counter__item mb-20">
+
+              {/* Counter Stats */}
+              <div className="row counter__bg mb-minus-20 counter-row-wrapper">
+                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 counter-col">
+                  <div className="counter__item">
                     <h3 className="counter__item-title">
-                      <span className="odometer" data-count="10" ref={counter1Ref}>0</span>
+                      <span ref={counter1Ref}>0</span>
                     </h3>
                     <p>Complete project</p>
                   </div>
                 </div>
-                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                  <div className="counter__item mb-20">
+                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 counter-col">
+                  <div className="counter__item">
                     <h3 className="counter__item-title">
-                      <span className="odometer" data-count="20" ref={counter2Ref}>0</span>
+                      <span ref={counter2Ref}>0</span>
                     </h3>
                     <p>Team member</p>
                   </div>
                 </div>
-                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                  <div className="counter__item mb-2">
+                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 counter-col">
+                  <div className="counter__item">
                     <h3 className="counter__item-title">
-                      <span className="odometer" data-count="5" ref={counter3Ref}>0</span>
+                      <span ref={counter3Ref}>0</span>
                     </h3>
                     <p>Winning award</p>
                   </div>
                 </div>
-                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                  <div className="counter__item mb-20">
+                <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 counter-col">
+                  <div className="counter__item">
                     <h3 className="counter__item-title">
-                      <span className="odometer" data-count="100" ref={counter4Ref}>0</span>
+                      <span ref={counter4Ref}>0</span>
                     </h3>
                     <p>Complete project</p>
                   </div>
