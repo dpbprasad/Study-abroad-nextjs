@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import LayoutWrapper from "@/components/layout/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Study Abroad Immigration Consultation Service",
@@ -21,9 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="no-js">
       <body suppressHydrationWarning>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

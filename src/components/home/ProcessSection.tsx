@@ -14,7 +14,7 @@ export default function ProcessSection({ variant = 'home' }: ProcessSectionProps
   return (
     <section className={sectionClass}>
       <div className={processAreaClass}>
-        <div className="process__bg-img" style={{ backgroundImage: 'url(/assets/img/about/process/process-bg.png)' }}></div>
+        <div className="process__bg-img" style={{ backgroundImage: 'url(/assets/img/bg-assets/bg-line.png)' }}></div>
         <div className="container">
           <div className="row">
             <div className="section__title-wrapper text-center mb-60">
@@ -35,7 +35,7 @@ export default function ProcessSection({ variant = 'home' }: ProcessSectionProps
               <h2 className="section__title-wrapper-title wow fadeInLeft animated" data-wow-delay=".3s">Your Trusted Pathway To Global <br /> Education Success </h2>
             </div>
           </div>
-          <div className="row mb-minus-30">
+          <div className="row mb-minus-30 justify-content-center">
             <div className="col-xl-4 col-lg-4 col-md-6">
               <div className="process__item mb-30 wow fadeInLeft animated" data-wow-delay=".4s">
                 <span className="process__item-number">01</span>

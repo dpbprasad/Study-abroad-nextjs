@@ -119,6 +119,71 @@ const servicesData: ServiceContent[] = [
       { title: 'Score Improvement', description: 'Focused training to maximize your score' }
     ],
     benefits: 'Our TOEFL coaching equips you with the skills and confidence to excel in the examination. With thorough preparation and expert guidance, you will achieve the scores required for admission to your dream university.'
+  },
+  {
+    id: 'personalized-counseling',
+    title: 'Personalized Counseling',
+    description1: 'Our personalized counseling service is designed to provide you with one-on-one guidance tailored to your unique needs, timelines, and aspirations. We take the time to understand your academic background, career goals, financial situation, and personal preferences to create a customized roadmap for your study abroad journey.',
+    description2: 'Through detailed consultations, we help you identify the right programs, universities, and countries that align with your objectives. Our counselors work closely with you to address your concerns, answer your questions, and provide ongoing support throughout the entire process.',
+    features: [
+      { title: 'Individual Attention', description: 'Dedicated counselor for personalized guidance' },
+      { title: 'Customized Plan', description: 'Tailored strategy based on your profile' },
+      { title: 'Flexible Scheduling', description: 'Consultations that fit your timeline' },
+      { title: 'Ongoing Support', description: 'Continuous assistance at every step' }
+    ],
+    benefits: 'With personalized counseling, you receive expert guidance that is specifically designed for your situation. This individualized approach ensures better decision-making, reduces stress, and increases your chances of success in securing admission and visa approval.'
+  },
+  {
+    id: 'university-network',
+    title: 'Global University Network',
+    description1: 'We have established strong partnerships with leading universities and educational institutions across the UK, USA, Canada, Australia, New Zealand, Sweden, Germany, and the Netherlands. Our extensive network gives you access to a wide range of programs and opportunities that match your academic and career goals.',
+    description2: 'Through our university partnerships, we stay informed about admission requirements, scholarship opportunities, program updates, and special pathways. This direct connection enables us to provide you with the most current information and insider knowledge to strengthen your application.',
+    features: [
+      { title: 'Partner Universities', description: 'Direct connections with top institutions' },
+      { title: 'Multiple Countries', description: 'Options across 8 major study destinations' },
+      { title: 'Program Variety', description: 'Wide range of courses and specializations' },
+      { title: 'Scholarship Access', description: 'Information on funding opportunities' }
+    ],
+    benefits: 'Our global university network provides you with exclusive access to programs, faster application processing, and better insight into admission requirements. Our partnerships often lead to higher acceptance rates and access to scholarship opportunities that may not be publicly advertised.'
+  },
+  {
+    id: 'application-visa',
+    title: 'Application and Visa Support',
+    description1: 'Navigating the application and visa process can be complex and overwhelming. Our comprehensive support service guides you through every step, from preparing application materials to submitting visa documents. We ensure all documentation is complete, accurate, and submitted on time to avoid delays or rejections.',
+    description2: 'Our experienced team has in-depth knowledge of visa requirements for different countries and stays updated with the latest immigration policies. We provide detailed checklists, document reviews, interview preparation, and assistance with managing deadlines to ensure a smooth and successful application process.',
+    features: [
+      { title: 'Document Preparation', description: 'Help organizing all required paperwork' },
+      { title: 'Application Review', description: 'Expert checking before submission' },
+      { title: 'Visa Guidance', description: 'Step-by-step visa application support' },
+      { title: 'Interview Prep', description: 'Mock interviews and coaching sessions' }
+    ],
+    benefits: 'With our application and visa support, you can navigate the complex process with confidence. Our end-to-end assistance minimizes errors, reduces processing time, and significantly increases your chances of successful admission and visa approval.'
+  },
+  {
+    id: 'post-arrival',
+    title: 'Post-Arrival Services',
+    description1: 'Our support does not end when you receive your visa. We provide comprehensive post-arrival services to help you settle into your new country comfortably and confidently. From airport pickup to accommodation assistance, we ensure your transition is smooth and stress-free.',
+    description2: 'We offer orientation sessions covering practical aspects like opening bank accounts, local transportation, healthcare registration, and cultural adjustment. We also provide information about language courses, part-time work opportunities, and community resources to help you thrive in your new environment.',
+    features: [
+      { title: 'Airport Pickup', description: 'Safe arrival and transfer assistance' },
+      { title: 'Accommodation Help', description: 'Support finding suitable housing' },
+      { title: 'Orientation Sessions', description: 'Practical information about local life' },
+      { title: 'Ongoing Assistance', description: 'Support even after you arrive' }
+    ],
+    benefits: 'Our post-arrival services ensure you feel supported and prepared as you begin your studies abroad. With practical assistance and local knowledge, you can focus on your academic goals while we help you navigate the challenges of living in a new country.'
+  },
+  {
+    id: 'alumni-networking',
+    title: 'Alumni and Networking',
+    description1: 'Join our vibrant community of successful alumni who have studied abroad with our guidance. Our alumni network provides valuable opportunities for mentorship, professional connections, and ongoing support throughout your academic journey and career development.',
+    description2: 'We organize networking events, webinars, and mentorship programs that connect current students with graduates who have successfully navigated similar paths. These connections provide insider perspectives, career advice, and opportunities for collaboration that extend well beyond your study period.',
+    features: [
+      { title: 'Alumni Network', description: 'Connect with successful graduates' },
+      { title: 'Mentorship Programs', description: 'Guidance from experienced alumni' },
+      { title: 'Networking Events', description: 'Regular meetups and webinars' },
+      { title: 'Career Support', description: 'Professional development opportunities' }
+    ],
+    benefits: 'Our alumni and networking opportunities provide you with a support system that extends beyond graduation. These connections can lead to internships, job opportunities, industry insights, and lifelong professional relationships that enhance your career prospects.'
   }
 ];
 
@@ -130,6 +195,54 @@ export default function ServiceDetailsSection() {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const detailsContentRef = useRef<HTMLDivElement>(null);
+
+  // Custom scrollbar styles
+  const customScrollbarStyles = `
+    .coaching-details__category {
+      max-height: 610px;
+      overflow-y: auto;
+      padding-bottom: 0;
+      padding-top: 0;
+      padding-right: 15px;
+      position: relative;
+    }
+
+    /* Add spacing using pseudo-elements */
+    .coaching-details__category::before,
+    .coaching-details__category::after {
+      content: '';
+      display: block;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .coaching-details__category::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .coaching-details__category::-webkit-scrollbar-track {
+      background: #E8F5E1;
+      border-radius: 10px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .coaching-details__category::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #83CD20 0%, #034833 100%);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .coaching-details__category::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #034833 0%, #83CD20 100%);
+    }
+
+    /* Firefox */
+    .coaching-details__category {
+      scrollbar-width: thin;
+      scrollbar-color: #83CD20 #E8F5E1;
+    }
+  `;
 
   // Get current service content
   const currentService = servicesData.find(service => service.id === activeService) || servicesData[0];
@@ -207,8 +320,10 @@ export default function ServiceDetailsSection() {
   }, [stickyState]);
 
   return (
-    <section ref={sectionRef} className="coaching-details__area pt-100 section-space-bottom">
-      <div className="container">
+    <>
+      <style>{customScrollbarStyles}</style>
+      <section ref={sectionRef} className="coaching-details__area pt-100 section-space-bottom">
+        <div className="container">
         <div className="row">
           {/* Service Categories Sidebar */}
           <div className="col-lg-4">
@@ -268,17 +383,57 @@ export default function ServiceDetailsSection() {
                 IELTS Coaching <span><i className="fa-solid fa-angle-right"></i></span>
               </a>
               <a
-                className={`wow fadeInLeft animated ${activeService === 'toefl' ? 'active' : ''}`}
+                className={`mb-15 wow fadeInLeft animated ${activeService === 'toefl' ? 'active' : ''}`}
                 data-wow-delay="1.4s"
                 onClick={(e) => { e.preventDefault(); handleServiceChange('toefl'); }}
                 style={{ cursor: 'pointer' }}
               >
                 TOEFL Coaching <span><i className="fa-solid fa-angle-right"></i></span>
               </a>
+              <a
+                className={`mb-15 wow fadeInLeft animated ${activeService === 'personalized-counseling' ? 'active' : ''}`}
+                data-wow-delay="1.6s"
+                onClick={(e) => { e.preventDefault(); handleServiceChange('personalized-counseling'); }}
+                style={{ cursor: 'pointer' }}
+              >
+                Personalized Counseling <span><i className="fa-solid fa-angle-right"></i></span>
+              </a>
+              <a
+                className={`mb-15 wow fadeInLeft animated ${activeService === 'university-network' ? 'active' : ''}`}
+                data-wow-delay="1.8s"
+                onClick={(e) => { e.preventDefault(); handleServiceChange('university-network'); }}
+                style={{ cursor: 'pointer' }}
+              >
+                Global University Network <span><i className="fa-solid fa-angle-right"></i></span>
+              </a>
+              <a
+                className={`mb-15 wow fadeInLeft animated ${activeService === 'application-visa' ? 'active' : ''}`}
+                data-wow-delay="2s"
+                onClick={(e) => { e.preventDefault(); handleServiceChange('application-visa'); }}
+                style={{ cursor: 'pointer' }}
+              >
+                Application and Visa Support <span><i className="fa-solid fa-angle-right"></i></span>
+              </a>
+              <a
+                className={`mb-15 wow fadeInLeft animated ${activeService === 'post-arrival' ? 'active' : ''}`}
+                data-wow-delay="2.2s"
+                onClick={(e) => { e.preventDefault(); handleServiceChange('post-arrival'); }}
+                style={{ cursor: 'pointer' }}
+              >
+                Post-Arrival Services <span><i className="fa-solid fa-angle-right"></i></span>
+              </a>
+              <a
+                className={`wow fadeInLeft animated ${activeService === 'alumni-networking' ? 'active' : ''}`}
+                data-wow-delay="2.4s"
+                onClick={(e) => { e.preventDefault(); handleServiceChange('alumni-networking'); }}
+                style={{ cursor: 'pointer' }}
+              >
+                Alumni and Networking <span><i className="fa-solid fa-angle-right"></i></span>
+              </a>
             </div>
 
             {/* Contact Widget */}
-            <div className="coaching-details__widget mt-30 wow fadeInLeft animated" data-wow-delay="1.6s">
+            <div className="coaching-details__widget mt-30 wow fadeInLeft animated" data-wow-delay="2.6s">
               <div className="coaching-details__widget-icon">
                 <svg width="41" height="42" viewBox="0 0 41 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M39.9219 31.2344L38.0469 39.125C37.8125 40.2969 36.875 41.0781 35.7031 41.0781C16.0156 41 0 24.9844 0 5.29688C0 4.125 0.703125 3.1875 1.875 2.95312L9.76562 1.07812C10.8594 0.84375 12.0312 1.46875 12.5 2.48438L16.1719 11C16.5625 12.0156 16.3281 13.1875 15.4688 13.8125L11.25 17.25C13.9062 22.6406 18.2812 27.0156 23.75 29.6719L27.1875 25.4531C27.8125 24.6719 28.9844 24.3594 30 24.75L38.5156 28.4219C39.5312 28.9688 40.1562 30.1406 39.9219 31.2344Z" fill="white"/>
@@ -344,7 +499,8 @@ export default function ServiceDetailsSection() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

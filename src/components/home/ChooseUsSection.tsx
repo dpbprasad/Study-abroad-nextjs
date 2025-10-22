@@ -54,7 +54,7 @@ export default function ChooseUsSection({ grayBg = true }: ChooseUsSectionProps)
                 <div className="choose-us__media-img">
                   <div className="choose-us__text">
                     <h3 className="counter__item-title">
-                      <span className="odometer" data-count="25" ref={counterRef}>0</span>
+                      <span ref={counterRef}>0</span>
                     </h3>
                     <p>Years Of <br /> Experience</p>
                   </div>

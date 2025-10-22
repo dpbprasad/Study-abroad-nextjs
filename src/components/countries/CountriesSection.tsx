@@ -2,93 +2,49 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+interface University {
+  id: string;
+  name: string;
+  logo: string;
+  website: string | null;
+  ranking: number | null;
+}
+
+interface Country {
+  id: string;
+  slug: string;
+  name: string;
+  universities: University[];
+}
+
 export default function CountriesSection() {
-  const [activeTab, setActiveTab] = useState('australia');
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [activeTab, setActiveTab] = useState('');
+  const [loading, setLoading] = useState(true);
   const [stickyState, setStickyState] = useState<'normal' | 'fixed' | 'absolute'>('normal');
   const [sidebarWidth, setSidebarWidth] = useState<number>(0);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const countriesData = {
-    australia: [
-      { name: 'Deakin University', image: '/assets/img/uni-logo/deakin.png', link: 'https://www.deakin.edu.au/' },
-      { name: 'University of Melbourne', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Sydney', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Australian National University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Monash University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Queensland', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'RMIT University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Adelaide', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Technology Sydney', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Macquarie University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Griffith University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'La Trobe University', image: '/assets/img/uni-logo/deakin.png' }
-    ],
-    newzealand: [
-      { name: 'University of Auckland', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Otago', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Victoria University of Wellington', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Canterbury', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Massey University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Lincoln University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Auckland University of Technology', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Waikato', image: '/assets/img/uni-logo/deakin.png' }
-    ],
-    canada: [
-      { name: 'University of Toronto', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of British Columbia', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'McGill University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'McMaster University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Alberta', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Montreal', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Waterloo', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Western University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Calgary', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Queen\'s University', image: '/assets/img/uni-logo/deakin.png' }
-    ],
-    uk: [
-      { name: 'University of Oxford', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Cambridge', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Imperial College London', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University College London', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'London School of Economics', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Edinburgh', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'King\'s College London', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Manchester', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Warwick', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Bristol', image: '/assets/img/uni-logo/deakin.png' }
-    ],
-    norway: [
-      { name: 'University of Oslo', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Norwegian University of Science and Technology', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Bergen', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'UiT The Arctic University of Norway', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'BI Norwegian Business School', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Norwegian School of Economics', image: '/assets/img/uni-logo/deakin.png' }
-    ],
-    usa: [
-      { name: 'Harvard University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Stanford University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Massachusetts Institute of Technology', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Yale University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Princeton University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Columbia University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of California Berkeley', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Chicago', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'Cornell University', image: '/assets/img/uni-logo/deakin.png' },
-      { name: 'University of Pennsylvania', image: '/assets/img/uni-logo/deakin.png' }
-    ]
-  };
-
-  const tabs = [
-    { id: 'australia', label: 'Australia' },
-    { id: 'newzealand', label: 'New Zealand' },
-    { id: 'canada', label: 'Canada' },
-    { id: 'uk', label: 'United Kingdom' },
-    { id: 'norway', label: 'Norway' },
-    { id: 'usa', label: 'United States' }
-  ];
+  // Fetch countries from API
+  useEffect(() => {
+    async function fetchCountries() {
+      try {
+        const response = await fetch('/api/countries');
+        const data = await response.json();
+        setCountries(data);
+        if (data.length > 0) {
+          setActiveTab(data[0].slug);
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching countries:', error);
+        setLoading(false);
+      }
+    }
+    fetchCountries();
+  }, []);
 
   // Function to handle tab change with scroll
   const handleTabChange = (tabId: string) => {
@@ -159,6 +115,18 @@ export default function CountriesSection() {
     };
   }, [stickyState]);
 
+  if (loading) {
+    return (
+      <section className="countries section-space tab overflow-hidden">
+        <div className="container">
+          <div className="text-center py-5">
+            <p>Loading countries...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section ref={sectionRef} className="countries section-space tab overflow-hidden">
       <div className="container">
@@ -171,15 +139,15 @@ export default function CountriesSection() {
               style={stickyState !== 'normal' ? { width: `${sidebarWidth}px` } : {}}
             >
               <ul className="nav nav-tabs countries__tab tab__wrap" role="tablist" style={{ paddingLeft: '40px' }}>
-                {tabs.map((tab, index) => (
-                  <li key={tab.id} className="nav-item" role="presentation">
+                {countries.map((country, index) => (
+                  <li key={country.id} className="nav-item" role="presentation">
                     <button
-                      className={`tab__btn pb-20 ${activeTab === tab.id ? 'active' : ''} ${index === tabs.length - 1 ? '' : 'pb-20'}`}
-                      onClick={() => handleTabChange(tab.id)}
+                      className={`tab__btn pb-20 ${activeTab === country.slug ? 'active' : ''} ${index === countries.length - 1 ? '' : 'pb-20'}`}
+                      onClick={() => handleTabChange(country.slug)}
                       type="button"
                       role="tab"
                     >
-                      {tab.label}
+                      {country.name}
                       <i className="fa-solid fa-angle-right"></i>
                     </button>
                   </li>
@@ -191,18 +159,18 @@ export default function CountriesSection() {
           {/* Tab Content */}
           <div className="col-lg-8" ref={contentRef}>
             <div className="tab-content">
-              {Object.entries(countriesData).map(([key, countries]) => (
+              {countries.map((country) => (
                 <div
-                  key={key}
-                  className={`tab-pane fade ${activeTab === key ? 'show active' : ''}`}
+                  key={country.id}
+                  className={`tab-pane fade ${activeTab === country.slug ? 'show active' : ''}`}
                   role="tabpanel"
                 >
                   <div className="countries__tab-content">
-                    {countries.map((country, index) => (
-                      country.link ? (
+                    {country.universities.map((university, index) => (
+                      university.website ? (
                         <a
-                          key={index}
-                          href={country.link}
+                          key={university.id}
+                          href={university.website}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="countries__tab-content__countries-name mb-30 d-flex"
@@ -218,13 +186,13 @@ export default function CountriesSection() {
                             if (h5) h5.style.color = '';
                           }}
                         >
-                          <img src={country.image} alt={country.name} />
-                          <h5>{country.name}</h5>
+                          <img src={university.logo} alt={university.name} />
+                          <h5>{university.name}</h5>
                         </a>
                       ) : (
                         <div
-                          key={index}
-                          className={`countries__tab-content__countries-name ${index === countries.length - 1 ? '' : 'mb-30'} d-flex`}
+                          key={university.id}
+                          className={`countries__tab-content__countries-name ${index === country.universities.length - 1 ? '' : 'mb-30'} d-flex`}
                           style={{ transition: 'background-color 0.3s ease, color 0.3s ease' }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.backgroundColor = '#83CD20';
@@ -237,8 +205,8 @@ export default function CountriesSection() {
                             if (h5) h5.style.color = '';
                           }}
                         >
-                          <img src={country.image} alt={country.name} />
-                          <h5>{country.name}</h5>
+                          <img src={university.logo} alt={university.name} />
+                          <h5>{university.name}</h5>
                         </div>
                       )
                     ))}

@@ -327,7 +327,7 @@ export default function CountryDetailsModernSection() {
                 <div className="row g-3">
                   {currentCountry.universities.map((university, index) => (
                     <div key={index} className="col-md-6">
-                      {university.link ? (
+                      {('link' in university && university.link) ? (
                         <a
                           href={university.link}
                           target="_blank"

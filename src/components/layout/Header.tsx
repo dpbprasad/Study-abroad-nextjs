@@ -45,8 +45,12 @@ export default function Header() {
                         <li id="nav-home">
                           <Link href="/">Home</Link>
                         </li>
-                        <li id="nav-about">
+                        <li id="nav-about" className="has-dropdown">
                           <Link href="/about">About Us</Link>
+                          <ul className="submenu">
+                            <li><Link href="/about">About Us</Link></li>
+                            <li><Link href="/test-about-us">Test About Us</Link></li>
+                          </ul>
                         </li>
                         <li id="nav-services">
                           <Link href="/services">Services</Link>
@@ -58,34 +62,8 @@ export default function Header() {
                           <Link href="/countries">Countries</Link>
                           <ul className="submenu">
                             <li><Link href="/countries">Countries</Link></li>
-                            <li><Link href="/country-info">Country Info (Modern)</Link></li>
-                            <li><Link href="/country-details-sample2">Country Details Sample 2</Link></li>
-                            <li><Link href="/countries/details">Country Details</Link></li>
+                            <li><Link href="/country-info">Country Details</Link></li>
                           </ul>
-                        </li>
-                        <li id="nav-blog" className="has-dropdown">
-                          <Link href="/blog">Blog</Link>
-                          <ul className="submenu">
-                            <li><Link href="/blog">Blog Grid</Link></li>
-                            <li><Link href="/blog/details">Blog Details</Link></li>
-                          </ul>
-                        </li>
-                        <li id="nav-page" className="has-dropdown">
-                          <Link href="#">Page</Link>
-                          <ul className="submenu">
-                            <li><Link href="/gallery">Gallery</Link></li>
-                            <li><Link href="/pricing">Pricing</Link></li>
-                            <li><Link href="/coaching">Coaching</Link></li>
-                            <li><Link href="/coaching/details">Coaching Details</Link></li>
-                            <li><Link href="/team">Team</Link></li>
-                            <li><Link href="/team/details">Team Details</Link></li>
-                          </ul>
-                        </li>
-                        <li id="nav-faq">
-                          <Link href="/faq">FAQ</Link>
-                        </li>
-                        <li id="nav-contact">
-                          <Link href="/contact">Contact</Link>
                         </li>
                       </ul>
                     </nav>

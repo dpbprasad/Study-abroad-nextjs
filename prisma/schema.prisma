@@ -1,0 +1,194 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ========================================
+// 1. Country Model
+// ========================================
+model Country {
+  id              String       @id @default(cuid())
+  slug            String       @unique
+  name            String
+  flag            String       // Emoji or image URL
+  flagGif         String?      // Animated flag GIF
+  backgroundImage String
+  title           String
+  description     String       @db.Text
+  highlights      Json         // Array of strings
+  quickFacts      Json         // Object with language, currency, etc.
+  universities    University[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+// ========================================
+// 2. University Model
+// ========================================
+model University {
+  id        String   @id @default(cuid())
+  name      String
+  logo      String
+  website   String?
+  ranking   Int?
+  location  String?
+  country   Country  @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  countryId String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([countryId])
+}
+
+// ========================================
+// 3. Service Model
+// ========================================
+model Service {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  icon         String?  // SVG or icon class
+  description1 String   @db.Text
+  description2 String   @db.Text
+  features     Json     // Array of {title, description, icon}
+  benefits     String   @db.Text
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ========================================
+// 4. BlogPost Model
+// ========================================
+model BlogPost {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String   @db.Text
+  content     String   @db.Text
+  image       String
+  publishDate DateTime
+  author      User?    @relation(fields: [authorId], references: [id])
+  authorId    String?
+  category    String?
+  tags        String[] // Array of tags
+  views       Int      @default(0)
+  featured    Boolean  @default(false)
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([authorId])
+  @@index([published])
+}
+
+// ========================================
+// 5. Testimonial Model
+// ========================================
+model Testimonial {
+  id             String   @id @default(cuid())
+  name           String
+  role           String
+  image          String
+  text           String   @db.Text
+  bgClass        String   @default("white-bg")
+  countryStudied String?
+  rating         Int?     @default(5)
+  featured       Boolean  @default(false)
+  publishDate    DateTime @default(now())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([featured])
+}
+
+// ========================================
+// 6. TeamMember Model
+// ========================================
+model TeamMember {
+  id          String   @id @default(cuid())
+  name        String
+  role        String
+  bio         String?  @db.Text
+  image       String
+  email       String?
+  phone       String?
+  socialLinks Json?    // {facebook, twitter, linkedin}
+  expertise   String[] // Array of expertise areas
+  order       Int      @default(0)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([active])
+}
+
+// ========================================
+// 7. Destination Model (for slider)
+// ========================================
+model Destination {
+  id          String   @id @default(cuid())
+  name        String
+  description String   @db.Text
+  flag        String
+  bgImage     String
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([featured])
+}
+
+// ========================================
+// 8. SiteConfig Model
+// ========================================
+model SiteConfig {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String   @db.Text
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+// ========================================
+// 9. User Model (Admin)
+// ========================================
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  password  String     // Hashed with bcrypt
+  name      String
+  role      String     @default("admin") // admin, editor, viewer
+  active    Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  blogPosts BlogPost[]
+
+  @@index([email])
+  @@index([active])
+}
+
+// ========================================
+// 10. ColorSettings Model (Simplified - Only 2 Main Colors)
+// ========================================
+model ColorSettings {
+  id                 String   @id @default(cuid())
+  name               String   @default("Default Theme")
+  lightGreen         String   @default("#83CD20")    // Light green (primary brand color)
+  darkGreen          String   @default("#034833")    // Dark green (headings, dark backgrounds)
+  isActive           Boolean  @default(false)        // Only one theme can be active
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}

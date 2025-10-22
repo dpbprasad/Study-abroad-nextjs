@@ -3,13 +3,7 @@
 export default function TestAboutCompanySection() {
   return (
     <section className="section-space" style={{ paddingBottom: 0 }}>
-      <style jsx global>{`
-        /* Section padding */
-        .section-space {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-
+      <style jsx>{`
         /* Equal height cards - universal flexbox solution */
         .blog-details__testimonial {
           height: 100%;
@@ -50,8 +44,8 @@ export default function TestAboutCompanySection() {
           display: flex;
         }
 
-        /* Override global CSS with responsive green border - ONLY for commitment section */
-        .commitment-section .choose-us__media-thumb-img-green-border {
+        /* Override global CSS with responsive green border */
+        .choose-us__media-thumb-img-green-border {
           position: absolute;
           border: 1px solid var(--rr-theme-primary);
           border-radius: clamp(15px, 2vw, 20px);
@@ -62,13 +56,13 @@ export default function TestAboutCompanySection() {
           z-index: 1;
         }
 
-        /* Responsive image containers - ONLY for commitment section */
-        .commitment-section .choose-us__media-thumb-img-img {
+        /* Responsive image containers */
+        .choose-us__media-thumb-img-img {
           position: relative;
           z-index: 2;
         }
 
-        .commitment-section .choose-us__media-thumb-img-img img {
+        .choose-us__media-thumb-img-img img {
           width: 100%;
           height: auto;
           display: block;
@@ -76,21 +70,55 @@ export default function TestAboutCompanySection() {
           max-width: 100%;
         }
 
-        /* Right side image container - ONLY for commitment section */
-        .commitment-section .choose-us__media-img-pictute {
+        /* Responsive Since 2007 card */
+        .since-card {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #83CD20;
+          padding: clamp(15px, 3%, 20px);
+          border-radius: clamp(15px, 2vw, 20px);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          gap: clamp(3px, 0.5vw, 5px);
+          width: 100%;
+          aspect-ratio: 1.09 / 1;
+          margin-bottom: 0;
+          z-index: 3;
+        }
+
+        .since-card p {
+          color: #FFFFFF;
+          font-size: clamp(16px, 3%, 18px);
+          line-height: 1;
+          margin: 0;
+          font-weight: 600;
+        }
+
+        .since-card h3 span {
+          color: #FFFFFF;
+          font-size: clamp(40px, 8.5%, 50px);
+          font-weight: 700;
+        }
+
+        /* Right side image container */
+        .choose-us__media-img-pictute {
           max-width: 100%;
           width: 100%;
         }
 
-        .commitment-section .choose-us__media-img-pictute img {
+        .choose-us__media-img-pictute img {
           width: 100%;
           height: auto;
           display: block;
           border-radius: clamp(15px, 2vw, 20px);
         }
 
-        /* Experience badge responsive - ONLY for commitment section */
-        .commitment-section .choose-us__text {
+        /* Experience badge responsive */
+        .choose-us__text {
           background: var(--rr-theme-primary);
           display: flex;
           align-items: center;
@@ -100,16 +128,16 @@ export default function TestAboutCompanySection() {
           margin-bottom: clamp(15px, 3%, 23px);
         }
 
-        .commitment-section .choose-us__text h3 span {
+        .choose-us__text h3 span {
           font-size: clamp(35px, 7vw, 50px) !important;
         }
 
-        .commitment-section .choose-us__text p {
+        .choose-us__text p {
           font-size: clamp(14px, 2.5vw, 16px) !important;
         }
 
-        /* Content area responsive spacing - ONLY for commitment section */
-        .commitment-section .choose-us__content {
+        /* Content area responsive spacing */
+        .choose-us__content {
           display: flex;
           flex-direction: column;
           overflow: hidden;
@@ -117,23 +145,23 @@ export default function TestAboutCompanySection() {
           padding-left: clamp(0px, 3%, 30px);
         }
 
-        .commitment-section .choose-us__content-description {
+        .choose-us__content-description {
           margin-bottom: 0;
           font-size: clamp(14px, 2.5%, 15px) !important;
           line-height: 1.5;
         }
 
-        .commitment-section .section__title-wrapper {
+        .section__title-wrapper {
           margin-bottom: clamp(8px, 1.5%, 10px);
         }
 
-        .commitment-section .section__title-wrapper-title {
+        .section__title-wrapper-title {
           margin-bottom: clamp(4px, 0.8%, 5px) !important;
-          font-size: clamp(18px, 3.5vw, 24px) !important;
+          font-size: clamp(20px, 4vw, 28px) !important;
         }
 
-        /* Media container responsive - ONLY for commitment section */
-        .commitment-section .choose-us__media {
+        /* Media container responsive */
+        .choose-us__media {
           display: flex;
           gap: clamp(20px, 4%, 30px);
           max-width: 100%;
@@ -141,8 +169,8 @@ export default function TestAboutCompanySection() {
           position: relative;
         }
 
-        .commitment-section .choose-us__media-thumb,
-        .commitment-section .choose-us__media-img {
+        .choose-us__media-thumb,
+        .choose-us__media-img {
           flex: 1;
           min-width: 0;
         }
@@ -161,7 +189,7 @@ export default function TestAboutCompanySection() {
           animation-direction: reverse;
         }
 
-        .commitment-section .marquee-container {
+        .marquee-container {
           margin-top: clamp(8px, 1.5%, 10px);
           flex: 1;
           display: flex;
@@ -169,7 +197,7 @@ export default function TestAboutCompanySection() {
           justify-content: center;
         }
 
-        .commitment-section .marquee-card {
+        .marquee-card {
           padding: clamp(12px, 2.5%, 16px);
           border-radius: clamp(6px, 1.2%, 8px);
           margin-left: clamp(10px, 2.5%, 16px);
@@ -184,7 +212,7 @@ export default function TestAboutCompanySection() {
           flex-direction: column;
         }
 
-        .commitment-section .marquee-avatar {
+        .marquee-avatar {
           width: clamp(42px, 8%, 48px);
           height: clamp(42px, 8%, 48px);
           border-radius: 50%;
@@ -197,19 +225,19 @@ export default function TestAboutCompanySection() {
           flex-shrink: 0;
         }
 
-        .commitment-section .marquee-name {
+        .marquee-name {
           margin: 0;
           font-size: clamp(13px, 2.2%, 14px);
           font-weight: 600;
           color: #034833;
         }
 
-        .commitment-section .marquee-handle {
+        .marquee-handle {
           font-size: clamp(11px, 1.8%, 12px);
           color: #666;
         }
 
-        .commitment-section .marquee-text {
+        .marquee-text {
           font-size: clamp(13px, 2.2%, 14px);
           padding-top: clamp(10px, 2%, 12px);
           padding-bottom: 0;
@@ -219,8 +247,8 @@ export default function TestAboutCompanySection() {
           flex: 1;
         }
 
-        .commitment-section .marquee-gradient-left,
-        .commitment-section .marquee-gradient-right {
+        .marquee-gradient-left,
+        .marquee-gradient-right {
           position: absolute;
           top: 0;
           height: 100%;
@@ -229,48 +257,56 @@ export default function TestAboutCompanySection() {
           pointer-events: none;
         }
 
-        .commitment-section .marquee-gradient-left {
+        .marquee-gradient-left {
           left: 0;
           background: linear-gradient(to right, white, transparent);
         }
 
-        .commitment-section .marquee-gradient-right {
+        .marquee-gradient-right {
           right: 0;
           background: linear-gradient(to left, white, transparent);
         }
 
-        /* Prevent layout shift during animation - ONLY for commitment section */
-        .commitment-section .choose-us__media-thumb-img {
+        /* Prevent layout shift during animation */
+        .choose-us__media-thumb-img {
           position: relative;
           min-height: 200px;
         }
 
-        /* Tablet adjustments - ONLY for commitment section */
+        /* Tablet adjustments */
         @media (max-width: 1199px) and (min-width: 992px) {
-          .commitment-section .choose-us__media {
+          .choose-us__media {
             gap: clamp(15px, 3%, 25px);
           }
 
-          .commitment-section .choose-us__content {
+          .choose-us__content {
             padding-left: clamp(0px, 2%, 20px);
           }
         }
 
-        /* Mobile adjustments - ONLY for commitment section */
+        /* Mobile adjustments for commitment section */
         @media (max-width: 991px) {
           .commitment-left-col {
             margin-bottom: clamp(30px, 5vw, 40px);
           }
 
-          .commitment-section .choose-us__media {
+          .choose-us__media {
             flex-wrap: wrap;
             justify-content: center;
             max-width: 500px;
             margin: 0 auto;
           }
 
-          .commitment-section .choose-us__content {
+          .choose-us__content {
             padding-left: 0;
+          }
+
+          .since-card {
+            position: relative;
+            margin-top: clamp(15px, 3vw, 20px);
+            width: auto;
+            aspect-ratio: auto;
+            padding: clamp(20px, 4vw, 30px);
           }
         }
       `}</style>
@@ -441,7 +477,7 @@ export default function TestAboutCompanySection() {
                     flexDirection: 'column'
                   }}>
                     <h3 className="coaching-details__content-title mb-20 wow fadeInLeft animated" data-wow-delay=".3s" style={{ fontSize: 'clamp(22px, 2.5vw, 28px)' }}>
-                      Overview of Our Values & Services
+                      Overview of Our Services
                     </h3>
                     <p className="wow fadeInLeft animated" data-wow-delay=".4s" style={{ fontSize: 'clamp(16px, 1.2vw, 18px)', lineHeight: '1.6' }}>
                       We provide comprehensive study abroad consultation services, guiding students through university selection, applications, and visa processes for a successful journey.
@@ -513,17 +549,6 @@ export default function TestAboutCompanySection() {
                 <h3 className="wow fadeInUp animated" data-wow-delay=".3s" style={{ color: '#034833', fontSize: '32px', fontWeight: '700' }}>
                   Why Students Choose Us
                 </h3>
-                <p className="wow fadeInUp animated" data-wow-delay=".4s" style={{
-                  fontSize: '16px',
-                  lineHeight: '1.8',
-                  color: '#555',
-                  marginTop: '20px',
-                  maxWidth: '800px',
-                  marginLeft: 'auto',
-                  marginRight: 'auto'
-                }}>
-                  Our proven visa success rate reflects meticulous preparation and expert guidance, supported by 18 years of word-of-mouth recommendations and very high reviews from students and families.
-                </p>
               </div>
 
               <div className="row">
@@ -721,151 +746,140 @@ export default function TestAboutCompanySection() {
               </div>
             </div>
 
-            {/* Why Choose Us Section - Copied from Home */}
+            {/* Commitment Statement */}
             <div className="choose-us__area" style={{ paddingTop: '0', paddingBottom: '0', marginBottom: 'clamp(60px, 10vw, 120px)' }}>
               <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-6">
-                    <div className="choose-us__media">
-                      <div className="choose-us__media-thumb">
-                        <div className="choose-us__media-thumb-img">
-                          <div className="choose-us__media-thumb-img-green-border wow fadeInLeft animated" data-wow-delay=".3s"></div>
-                          <div className="choose-us__media-thumb-img-img wow fadeInLeft animated" data-wow-delay=".4s">
-                            <img src="/assets/img/choose-us/choose-us-left-img.png" alt="img not found" />
-                          </div>
-                        </div>
-                        <div className="choose-us__media-thumb-circle spin">
-                          <img src="/assets/img/choose-us/choose-us-circle-img.png" alt="img not found" />
+                <div className="row commitment-row align-items-stretch">
+                <div className="col-xl-6 col-lg-6 col-md-12 commitment-left-col">
+                  <div className="choose-us__media">
+                    <div className="choose-us__media-thumb">
+                      <div className="choose-us__media-thumb-img">
+                        <div className="choose-us__media-thumb-img-green-border wow fadeInLeft animated" data-wow-delay=".3s"></div>
+                        <div className="choose-us__media-thumb-img-img wow fadeInLeft animated" data-wow-delay=".4s">
+                          <img src="/assets/img/choose-us/choose-us-left-img.png" alt="img not found" />
                         </div>
                       </div>
-                      <div className="choose-us__media-img">
-                        <div className="choose-us__text">
-                          <h3 className="counter__item-title">
-                            <span>18</span>
-                          </h3>
-                          <p>Years Of <br /> Experience</p>
-                        </div>
-                        <div className="choose-us__media-img-pictute wow fadeInLeft animated" data-wow-delay=".6s">
-                          <img src="/assets/img/choose-us/choose-us-right-img.png" alt="img not found" />
-                        </div>
+                      <div className="since-card d-none d-lg-flex wow fadeInLeft animated" data-wow-delay=".5s">
+                        <p>Since</p>
+                        <h3 className="counter__item-title" style={{ color: '#FFFFFF', margin: '0', lineHeight: '1' }}>
+                          <span>2007</span>
+                        </h3>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-xl-6">
-                    <div className="choose-us__content">
-                      <div className="section__title-wrapper mb-10">
-                        <h6 className="section__title-wrapper-black-subtitle mb-10 wow fadeInLeft animated" data-wow-delay=".2s">
-                          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clipPath="url(#clip0_3754_90_2)">
-                              <path d="M19.299 2.66986C19.2609 2.59008 19.1926 2.52868 19.1093 2.49911L12.195 0.0581985C12.0215 -0.00317634 11.831 0.0879901 11.7697 0.26149L10.199 4.70581H9.51204V3.57248C9.51202 3.41941 9.47686 3.26838 9.40926 3.13104C9.34166 2.9937 9.24343 2.87372 9.12214 2.78033C9.00085 2.68695 8.85974 2.62266 8.70968 2.59242C8.55962 2.56217 8.40462 2.56679 8.25663 2.6059L0.24744 4.7169V4.7229C0.176847 4.74064 0.114146 4.78133 0.0691834 4.83857C0.0242205 4.89581 -0.000457842 4.96636 -0.000976562 5.03915L-0.000976562 19.0391C-0.000976562 19.5914 0.446773 20.0391 0.999021 20.0391H10.3323C10.8846 20.0391 11.3323 19.5914 11.3323 19.0391V16.0145L14.0057 16.9582C14.1793 17.0194 14.3697 16.9285 14.431 16.7548L19.3133 2.92457C19.3278 2.88326 19.334 2.83949 19.3315 2.79578C19.329 2.75208 19.318 2.70928 19.2989 2.66986H19.299Z" fill="#034833"/>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_3754_90_2">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.0390625)"/>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          OUR COMMITMENT
-                        </h6>
-                        <h2 className="section__title-wrapper-title wow fadeInLeft animated" data-wow-delay=".3s">
-                          Our Commitment to Sri Lankan Students
-                        </h2>
+                    <div className="choose-us__media-img">
+                      <div className="choose-us__text">
+                        <h3 className="counter__item-title" style={{ margin: 0 }}>
+                          <span>18</span>
+                        </h3>
+                        <p style={{ margin: 0 }}>Years Of <br /> Experience</p>
                       </div>
-                      <p className="choose-us__content-description wow fadeInLeft animated" data-wow-delay=".4s">
-                        We guide students based on individual capacities and aspirations, emphasizing counseling, knowledge transfer, and development of well-rounded graduates with strong values.
-                      </p>
-
-                      {/* Testimonials Marquee */}
-                      <div style={{ marginTop: '0px' }}>
-                        {/* First Row */}
-                        <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
-                          <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '80px', zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to right, white, transparent)' }}></div>
-                          <div className="marquee-inner" style={{ display: 'flex', transform: 'translateZ(0)', minWidth: '200%', paddingTop: '20px', paddingBottom: '0px' }}>
-                            {[
-                              { name: 'Kasun Perera', handle: '@kasun_uk', text: 'Study Abroad helped me secure admission to my dream university in the UK. Their guidance was exceptional!' },
-                              { name: 'Nimali Silva', handle: '@nimali_aus', text: 'The personalized counseling made all the difference. They understood my goals perfectly.' },
-                              { name: 'Ravindu Fernando', handle: '@ravindu_ca', text: 'Thanks to their expert support, my Canadian student visa was approved on the first try!' },
-                              { name: 'Thilini Jayawardena', handle: '@thilini_nz', text: 'From university selection to post-arrival support in New Zealand, they were amazing.' },
-                              { name: 'Kasun Perera', handle: '@kasun_uk', text: 'Study Abroad helped me secure admission to my dream university in the UK. Their guidance was exceptional!' },
-                              { name: 'Nimali Silva', handle: '@nimali_aus', text: 'The personalized counseling made all the difference. They understood my goals perfectly.' },
-                              { name: 'Ravindu Fernando', handle: '@ravindu_ca', text: 'Thanks to their expert support, my Canadian student visa was approved on the first try!' },
-                              { name: 'Thilini Jayawardena', handle: '@thilini_nz', text: 'From university selection to post-arrival support in New Zealand, they were amazing.' },
-                            ].map((card, index) => (
-                              <div key={index} style={{ padding: '16px', borderRadius: '8px', marginLeft: '16px', marginRight: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', width: '288px', flexShrink: 0, backgroundColor: '#fff', transition: 'all 0.2s', display: 'flex', flexDirection: 'column' }}>
-                                <div style={{ display: 'flex', gap: '8px' }}>
-                                  <div style={{ width: '44px', height: '44px', borderRadius: '50%', backgroundColor: '#83CD20', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '600', fontSize: '18px', flexShrink: 0 }}>
-                                    {card.name.charAt(0)}
-                                  </div>
-                                  <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                      <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#034833' }}>{card.name}</p>
-                                      <svg style={{ marginTop: '2px', fill: '#83CD20' }} width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M4.555.72a4 4 0 0 1-.297.24c-.179.12-.38.202-.59.244a4 4 0 0 1-.38.041c-.48.039-.721.058-.922.129a1.63 1.63 0 0 0-.992.992c-.071.2-.09.441-.129.922a4 4 0 0 1-.041.38 1.6 1.6 0 0 1-.245.59 3 3 0 0 1-.239.297c-.313.368-.47.551-.56.743-.213.444-.213.96 0 1.404.09.192.247.375.56.743.125.146.187.219.24.297.12.179.202.38.244.59.018.093.026.189.041.38.039.48.058.721.129.922.163.464.528.829.992.992.2.071.441.09.922.129.191.015.287.023.38.041.21.042.411.125.59.245.078.052.151.114.297.239.368.313.551.47.743.56.444.213.96.213 1.404 0 .192-.09.375-.247.743-.56.146-.125.219-.187.297-.24.179-.12.38-.202.59-.244a4 4 0 0 1 .38-.041c.48-.039.721-.058.922-.129.464-.163.829-.528.992-.992.071-.2.09-.441.129-.922a4 4 0 0 1 .041-.38c.042-.21.125-.411.245-.59.052-.078.114-.151.239-.297.313-.368.47-.551.56-.743.213-.444.213-.96 0-1.404-.09-.192-.247-.375-.56-.743a4 4 0 0 1-.24-.297 1.6 1.6 0 0 1-.244-.59 3 3 0 0 1-.041-.38c-.039-.48-.058-.721-.129-.922a1.63 1.63 0 0 0-.992-.992c-.2-.071-.441-.09-.922-.129a4 4 0 0 1-.38-.041 1.6 1.6 0 0 1-.59-.245A3 3 0 0 1 7.445.72C7.077.407 6.894.25 6.702.16a1.63 1.63 0 0 0-1.404 0c-.192.09-.375.247-.743.56m4.07 3.998a.488.488 0 0 0-.691-.69l-2.91 2.91-.958-.957a.488.488 0 0 0-.69.69l1.302 1.302c.19.191.5.191.69 0z" />
-                                      </svg>
-                                    </div>
-                                    <span style={{ fontSize: '12px', color: '#666' }}>{card.handle}</span>
-                                  </div>
-                                </div>
-                                <p style={{ fontSize: '14px', paddingTop: '16px', color: '#1f2937', margin: 0, lineHeight: '1.5' }}>{card.text}</p>
-                              </div>
-                            ))}
-                          </div>
-                          <div style={{ position: 'absolute', right: 0, top: 0, height: '100%', width: '80px', zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to left, white, transparent)' }}></div>
-                        </div>
-
-                        {/* Second Row - Reverse */}
-                        <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
-                          <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '80px', zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to right, white, transparent)' }}></div>
-                          <div className="marquee-inner marquee-reverse" style={{ display: 'flex', transform: 'translateZ(0)', minWidth: '200%', paddingTop: '20px', paddingBottom: '0px' }}>
-                            {[
-                              { name: 'Sachini Rathnayake', handle: '@sachini_usa', text: 'Their comprehensive support made my transition to studying in the USA smooth and stress-free!' },
-                              { name: 'Dilshan Wickramasinghe', handle: '@dilshan_swe', text: 'I got into a top university in Sweden with their expert guidance. Highly recommend!' },
-                              { name: 'Ishara Gunasekara', handle: '@ishara_ger', text: 'The team helped me navigate the complex German visa process with ease. Forever grateful!' },
-                              { name: 'Sanduni Amarasinghe', handle: '@sanduni_neth', text: 'Best decision was choosing Study Abroad for my Netherlands application. Professional!' },
-                              { name: 'Sachini Rathnayake', handle: '@sachini_usa', text: 'Their comprehensive support made my transition to studying in the USA smooth and stress-free!' },
-                              { name: 'Dilshan Wickramasinghe', handle: '@dilshan_swe', text: 'I got into a top university in Sweden with their expert guidance. Highly recommend!' },
-                              { name: 'Ishara Gunasekara', handle: '@ishara_ger', text: 'The team helped me navigate the complex German visa process with ease. Forever grateful!' },
-                              { name: 'Sanduni Amarasinghe', handle: '@sanduni_neth', text: 'Best decision was choosing Study Abroad for my Netherlands application. Professional!' },
-                            ].map((card, index) => (
-                              <div key={index} style={{ padding: '16px', borderRadius: '8px', marginLeft: '16px', marginRight: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', width: '288px', flexShrink: 0, backgroundColor: '#fff', transition: 'all 0.2s', display: 'flex', flexDirection: 'column' }}>
-                                <div style={{ display: 'flex', gap: '8px' }}>
-                                  <div style={{ width: '44px', height: '44px', borderRadius: '50%', backgroundColor: '#034833', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: '600', fontSize: '18px', flexShrink: 0 }}>
-                                    {card.name.charAt(0)}
-                                  </div>
-                                  <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                      <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#034833' }}>{card.name}</p>
-                                      <svg style={{ marginTop: '2px', fill: '#83CD20' }} width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M4.555.72a4 4 0 0 1-.297.24c-.179.12-.38.202-.59.244a4 4 0 0 1-.38.041c-.48.039-.721.058-.922.129a1.63 1.63 0 0 0-.992.992c-.071.2-.09.441-.129.922a4 4 0 0 1-.041.38 1.6 1.6 0 0 1-.245.59 3 3 0 0 1-.239.297c-.313.368-.47.551-.56.743-.213.444-.213.96 0 1.404.09.192.247.375.56.743.125.146.187.219.24.297.12.179.202.38.244.59.018.093.026.189.041.38.039.48.058.721.129.922.163.464.528.829.992.992.2.071.441.09.922.129.191.015.287.023.38.041.21.042.411.125.59.245.078.052.151.114.297.239.368.313.551.47.743.56.444.213.96.213 1.404 0 .192-.09.375-.247.743-.56.146-.125.219-.187.297-.24.179-.12.38-.202.59-.244a4 4 0 0 1 .38-.041c.48-.039.721-.058.922-.129.464-.163.829-.528.992-.992.071-.2.09-.441.129-.922a4 4 0 0 1 .041-.38c.042-.21.125-.411.245-.59.052-.078.114-.151.239-.297.313-.368.47-.551.56-.743.213-.444.213-.96 0-1.404-.09-.192-.247-.375-.56-.743a4 4 0 0 1-.24-.297 1.6 1.6 0 0 1-.244-.59 3 3 0 0 1-.041-.38c-.039-.48-.058-.721-.129-.922a1.63 1.63 0 0 0-.992-.992c-.2-.071-.441-.09-.922-.129a4 4 0 0 1-.38-.041 1.6 1.6 0 0 1-.59-.245A3 3 0 0 1 7.445.72C7.077.407 6.894.25 6.702.16a1.63 1.63 0 0 0-1.404 0c-.192.09-.375.247-.743.56m4.07 3.998a.488.488 0 0 0-.691-.69l-2.91 2.91-.958-.957a.488.488 0 0 0-.69.69l1.302 1.302c.19.191.5.191.69 0z" />
-                                      </svg>
-                                    </div>
-                                    <span style={{ fontSize: '12px', color: '#666' }}>{card.handle}</span>
-                                  </div>
-                                </div>
-                                <p style={{ fontSize: '14px', paddingTop: '16px', color: '#1f2937', margin: 0, lineHeight: '1.5' }}>{card.text}</p>
-                              </div>
-                            ))}
-                          </div>
-                          <div style={{ position: 'absolute', right: 0, top: 0, height: '100%', width: '80px', zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to left, white, transparent)' }}></div>
-                        </div>
-                      </div>
-                      <div className="choose-us__button mt-40" style={{ display: 'none' }}>
-                        <div className="choose-us__button-btn wow fadeInLeft animated" data-wow-delay=".7s">
-                          <a href="/story" className="rr-btn-rounded">Read More</a>
-                        </div>
-                        <div className="choose-us__button-text wow fadeInLeft animated" data-wow-delay=".8s">
-                          <div className="choose-us__button-text-icon">
-                            <i className="fa-solid fa-phone"></i>
-                          </div>
-                          <div className="choose-us__button-text-number">
-                            <h6>Need help?</h6>
-                            <a href="tel:(011)111-1111">(011) 111-1111</a>
-                          </div>
-                        </div>
+                      <div className="choose-us__media-img-pictute wow fadeInLeft animated" data-wow-delay=".6s">
+                        <img src="/assets/img/choose-us/choose-us-right-img.png" alt="img not found" />
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="col-xl-6 col-lg-6 col-md-12 commitment-right-col">
+                  <div className="choose-us__content">
+                    <div className="section__title-wrapper">
+                      <h6 className="section__title-wrapper-black-subtitle wow fadeInLeft animated" data-wow-delay=".2s" style={{ marginBottom: '5px' }}>
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_3754_90)">
+                            <path d="M19.299 2.66986C19.2609 2.59008 19.1926 2.52868 19.1093 2.49911L12.195 0.0581985C12.0215 -0.00317634 11.831 0.0879901 11.7697 0.26149L10.199 4.70581H9.51204V3.57248C9.51202 3.41941 9.47686 3.26838 9.40926 3.13104C9.34166 2.9937 9.24343 2.87372 9.12214 2.78033C9.00085 2.68695 8.85974 2.62266 8.70968 2.59242C8.55962 2.56217 8.40462 2.56679 8.25663 2.6059L0.24744 4.7169V4.7229C0.176847 4.74064 0.114146 4.78133 0.0691834 4.83857C0.0242205 4.89581 -0.000457842 4.96636 -0.000976562 5.03915L-0.000976562 19.0391C-0.000976562 19.5914 0.446773 20.0391 0.999021 20.0391H10.3323C10.8846 20.0391 11.3323 19.5914 11.3323 19.0391V16.0145L14.0057 16.9582C14.1793 17.0194 14.3697 16.9285 14.431 16.7548L19.3133 2.92457C19.3278 2.88326 19.334 2.83949 19.3315 2.79578C19.329 2.75208 19.318 2.70928 19.2989 2.66986H19.299Z" fill="#034833"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_3754_90">
+                              <rect width="20" height="20" fill="white" transform="translate(0 0.0390625)"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        OUR COMMITMENT
+                      </h6>
+                      <h2 className="section__title-wrapper-title wow fadeInLeft animated" data-wow-delay=".3s">
+                        Our Commitment to Sri Lankan Students
+                      </h2>
+                    </div>
+                    <p className="choose-us__content-description wow fadeInLeft animated" data-wow-delay=".4s">
+                      We recognize local talent and provide personalized pathways to study in developed countries, ensuring accessible, high-quality opportunities for every aspiring student.
+                    </p>
+
+                    {/* Testimonials Marquee */}
+                    <div className="marquee-container">
+                      {/* First Row */}
+                      <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
+                        <div className="marquee-gradient-left"></div>
+                        <div className="marquee-inner" style={{ display: 'flex', transform: 'translateZ(0)', minWidth: '200%', paddingTop: '13px', paddingBottom: '8px' }}>
+                          {[
+                            { name: 'Kasun Perera', handle: '@kasun_uk', date: 'March 2024', text: 'Study Abroad helped me secure admission to my dream university in the UK. Their guidance was exceptional!' },
+                            { name: 'Nimali Silva', handle: '@nimali_aus', date: 'January 2024', text: 'The personalized counseling made all the difference. They understood my goals perfectly.' },
+                            { name: 'Ravindu Fernando', handle: '@ravindu_ca', date: 'February 2024', text: 'Thanks to their expert support, my Canadian student visa was approved on the first try!' },
+                            { name: 'Thilini Jayawardena', handle: '@thilini_nz', date: 'April 2024', text: 'From university selection to post-arrival support in New Zealand, they were amazing.' },
+                            { name: 'Kasun Perera', handle: '@kasun_uk', date: 'March 2024', text: 'Study Abroad helped me secure admission to my dream university in the UK. Their guidance was exceptional!' },
+                            { name: 'Nimali Silva', handle: '@nimali_aus', date: 'January 2024', text: 'The personalized counseling made all the difference. They understood my goals perfectly.' },
+                            { name: 'Ravindu Fernando', handle: '@ravindu_ca', date: 'February 2024', text: 'Thanks to their expert support, my Canadian student visa was approved on the first try!' },
+                            { name: 'Thilini Jayawardena', handle: '@thilini_nz', date: 'April 2024', text: 'From university selection to post-arrival support in New Zealand, they were amazing.' },
+                          ].map((card, index) => (
+                            <div key={index} className="marquee-card">
+                              <div style={{ display: 'flex', gap: '10px' }}>
+                                <div className="marquee-avatar" style={{ backgroundColor: '#83CD20' }}>
+                                  {card.name.charAt(0)}
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                    <p className="marquee-name">{card.name}</p>
+                                    <svg style={{ marginTop: '2px' }} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path fillRule="evenodd" clipRule="evenodd" d="M4.555.72a4 4 0 0 1-.297.24c-.179.12-.38.202-.59.244a4 4 0 0 1-.38.041c-.48.039-.721.058-.922.129a1.63 1.63 0 0 0-.992.992c-.071.2-.09.441-.129.922a4 4 0 0 1-.041.38 1.6 1.6 0 0 1-.245.59 3 3 0 0 1-.239.297c-.313.368-.47.551-.56.743-.213.444-.213.96 0 1.404.09.192.247.375.56.743.125.146.187.219.24.297.12.179.202.38.244.59.018.093.026.189.041.38.039.48.058.721.129.922.163.464.528.829.992.992.2.071.441.09.922.129.191.015.287.023.38.041.21.042.411.125.59.245.078.052.151.114.297.239.368.313.551.47.743.56.444.213.96.213 1.404 0 .192-.09.375-.247.743-.56.146-.125.219-.187.297-.24.179-.12.38-.202.59-.244a4 4 0 0 1 .38-.041c.48-.039.721-.058.922-.129.464-.163.829-.528.992-.992.071-.2.09-.441.129-.922a4 4 0 0 1 .041-.38c.042-.21.125-.411.245-.59.052-.078.114-.151.239-.297.313-.368.47-.551.56-.743.213-.444.213-.96 0-1.404-.09-.192-.247-.375-.56-.743a4 4 0 0 1-.24-.297 1.6 1.6 0 0 1-.244-.59 3 3 0 0 1-.041-.38c-.039-.48-.058-.721-.129-.922a1.63 1.63 0 0 0-.992-.992c-.2-.071-.441-.09-.922-.129a4 4 0 0 1-.38-.041 1.6 1.6 0 0 1-.59-.245A3 3 0 0 1 7.445.72C7.077.407 6.894.25 6.702.16a1.63 1.63 0 0 0-1.404 0c-.192.09-.375.247-.743.56m4.07 3.998a.488.488 0 0 0-.691-.69l-2.91 2.91-.958-.957a.488.488 0 0 0-.69.69l1.302 1.302c.19.191.5.191.69 0z" fill="#83CD20" />
+                                    </svg>
+                                  </div>
+                                  <span className="marquee-handle">{card.handle}</span>
+                                </div>
+                              </div>
+                              <p className="marquee-text">{card.text}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="marquee-gradient-right"></div>
+                      </div>
+
+                      {/* Second Row - Reverse */}
+                      <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
+                        <div className="marquee-gradient-left"></div>
+                        <div className="marquee-inner marquee-reverse" style={{ display: 'flex', transform: 'translateZ(0)', minWidth: '200%', paddingTop: '8px', paddingBottom: '2px' }}>
+                          {[
+                            { name: 'Sachini Rathnayake', handle: '@sachini_usa', date: 'May 2024', text: 'Their comprehensive support made my transition to studying in the USA smooth and stress-free!' },
+                            { name: 'Dilshan Wickramasinghe', handle: '@dilshan_swe', date: 'March 2024', text: 'I got into a top university in Sweden with their expert guidance. Highly recommend!' },
+                            { name: 'Ishara Gunasekara', handle: '@ishara_ger', date: 'April 2024', text: 'The team helped me navigate the complex German visa process with ease. Forever grateful!' },
+                            { name: 'Sanduni Amarasinghe', handle: '@sanduni_neth', date: 'February 2024', text: 'Best decision was choosing Study Abroad for my Netherlands application. Professional!' },
+                            { name: 'Sachini Rathnayake', handle: '@sachini_usa', date: 'May 2024', text: 'Their comprehensive support made my transition to studying in the USA smooth and stress-free!' },
+                            { name: 'Dilshan Wickramasinghe', handle: '@dilshan_swe', date: 'March 2024', text: 'I got into a top university in Sweden with their expert guidance. Highly recommend!' },
+                            { name: 'Ishara Gunasekara', handle: '@ishara_ger', date: 'April 2024', text: 'The team helped me navigate the complex German visa process with ease. Forever grateful!' },
+                            { name: 'Sanduni Amarasinghe', handle: '@sanduni_neth', date: 'February 2024', text: 'Best decision was choosing Study Abroad for my Netherlands application. Professional!' },
+                          ].map((card, index) => (
+                            <div key={index} className="marquee-card">
+                              <div style={{ display: 'flex', gap: '10px' }}>
+                                <div className="marquee-avatar" style={{ backgroundColor: '#034833' }}>
+                                  {card.name.charAt(0)}
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                    <p className="marquee-name">{card.name}</p>
+                                    <svg style={{ marginTop: '2px' }} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path fillRule="evenodd" clipRule="evenodd" d="M4.555.72a4 4 0 0 1-.297.24c-.179.12-.38.202-.59.244a4 4 0 0 1-.38.041c-.48.039-.721.058-.922.129a1.63 1.63 0 0 0-.992.992c-.071.2-.09.441-.129.922a4 4 0 0 1-.041.38 1.6 1.6 0 0 1-.245.59 3 3 0 0 1-.239.297c-.313.368-.47.551-.56.743-.213.444-.213.96 0 1.404.09.192.247.375.56.743.125.146.187.219.24.297.12.179.202.38.244.59.018.093.026.189.041.38.039.48.058.721.129.922.163.464.528.829.992.992.2.071.441.09.922.129.191.015.287.023.38.041.21.042.411.125.59.245.078.052.151.114.297.239.368.313.551.47.743.56.444.213.96.213 1.404 0 .192-.09.375-.247.743-.56.146-.125.219-.187.297-.24.179-.12.38-.202.59-.244a4 4 0 0 1 .38-.041c.48-.039.721-.058.922-.129.464-.163.829-.528.992-.992.071-.2.09-.441.129-.922a4 4 0 0 1 .041-.38c.042-.21.125-.411.245-.59.052-.078.114-.151.239-.297.313-.368.47-.551.56-.743.213-.444.213-.96 0-1.404-.09-.192-.247-.375-.56-.743a4 4 0 0 1-.24-.297 1.6 1.6 0 0 1-.244-.59 3 3 0 0 1-.041-.38c-.039-.48-.058-.721-.129-.922a1.63 1.63 0 0 0-.992-.992c-.2-.071-.441-.09-.922-.129a4 4 0 0 1-.38-.041 1.6 1.6 0 0 1-.59-.245A3 3 0 0 1 7.445.72C7.077.407 6.894.25 6.702.16a1.63 1.63 0 0 0-1.404 0c-.192.09-.375.247-.743.56m4.07 3.998a.488.488 0 0 0-.691-.69l-2.91 2.91-.958-.957a.488.488 0 0 0-.69.69l1.302 1.302c.19.191.5.191.69 0z" fill="#83CD20" />
+                                    </svg>
+                                  </div>
+                                  <span className="marquee-handle">{card.handle}</span>
+                                </div>
+                              </div>
+                              <p className="marquee-text">{card.text}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="marquee-gradient-right"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </div>
             </div>
 
