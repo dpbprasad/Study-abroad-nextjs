@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     {
       id: 'sample-oxford',
       name: 'University of Oxford',
-      logo: '/assets/img/uni-logo/deakin.png',
+      logo: '/assets/img/uni-logo/h-logo/black-brands1.png',
       countryId: 'sample-uk',
       order: 1,
       country: {
@@ -18,11 +18,33 @@ export async function GET(request: Request) {
       }
     },
     {
+      id: 'sample-cambridge',
+      name: 'University of Cambridge',
+      logo: '/assets/img/uni-logo/h-logo/black-brands2.png',
+      countryId: 'sample-uk',
+      order: 2,
+      country: {
+        id: 'sample-uk',
+        name: 'United Kingdom'
+      }
+    },
+    {
       id: 'sample-harvard',
       name: 'Harvard University',
-      logo: '/assets/img/uni-logo/deakin.png',
+      logo: '/assets/img/uni-logo/h-logo/black-brands3.png',
       countryId: 'sample-usa',
-      order: 2,
+      order: 3,
+      country: {
+        id: 'sample-usa',
+        name: 'United States'
+      }
+    },
+    {
+      id: 'sample-mit',
+      name: 'MIT',
+      logo: '/assets/img/uni-logo/h-logo/black-brands4.png',
+      countryId: 'sample-usa',
+      order: 4,
       country: {
         id: 'sample-usa',
         name: 'United States'
@@ -31,9 +53,20 @@ export async function GET(request: Request) {
     {
       id: 'sample-toronto',
       name: 'University of Toronto',
-      logo: '/assets/img/uni-logo/deakin.png',
+      logo: '/assets/img/uni-logo/h-logo/black-brands5.png',
       countryId: 'sample-canada',
-      order: 3,
+      order: 5,
+      country: {
+        id: 'sample-canada',
+        name: 'Canada'
+      }
+    },
+    {
+      id: 'sample-ubc',
+      name: 'University of British Columbia',
+      logo: '/assets/img/uni-logo/h-logo/black-brands1.png',
+      countryId: 'sample-canada',
+      order: 6,
       country: {
         id: 'sample-canada',
         name: 'Canada'
@@ -42,9 +75,20 @@ export async function GET(request: Request) {
     {
       id: 'sample-melbourne',
       name: 'University of Melbourne',
-      logo: '/assets/img/uni-logo/deakin.png',
+      logo: '/assets/img/uni-logo/h-logo/black-brands2.png',
       countryId: 'sample-australia',
-      order: 4,
+      order: 7,
+      country: {
+        id: 'sample-australia',
+        name: 'Australia'
+      }
+    },
+    {
+      id: 'sample-sydney',
+      name: 'University of Sydney',
+      logo: '/assets/img/uni-logo/h-logo/black-brands3.png',
+      countryId: 'sample-australia',
+      order: 8,
       country: {
         id: 'sample-australia',
         name: 'Australia'
