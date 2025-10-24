@@ -1,7 +1,14 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+// import { prisma } from '@/lib/prisma'; // TEMPORARILY DISABLED
 
 export async function GET() {
+  // TEMPORARILY DISABLED: Database fetching
+  // Returning empty array to prevent Vercel deployment errors
+
+  const countries: any[] = [];
+  return NextResponse.json(countries);
+
+  /* ORIGINAL CODE - DISABLED FOR NOW
   try {
     const countries = await prisma.country.findMany({
       include: {
@@ -24,4 +31,5 @@ export async function GET() {
       { status: 500 }
     );
   }
+  */
 }
