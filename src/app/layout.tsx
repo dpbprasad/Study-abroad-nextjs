@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
+import StyleLoader from "@/components/StyleLoader";
 
 export const metadata: Metadata = {
   title: "Study Abroad Immigration Consultation Service",
@@ -19,17 +21,44 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="no-js">
-      <head>
-        <link rel="stylesheet" href="/assets/css/vendor/animate.min.css" />
-        <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
-        <link rel="stylesheet" href="/assets/css/vendor/fontawesome-pro.css" />
-        <link rel="stylesheet" href="/assets/css/vendor/spacing.css" />
-        <link rel="stylesheet" href="/assets/css/main.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" />
-      </head>
       <body suppressHydrationWarning>
+        <StyleLoader />
+        <Script
+          id="load-styles"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var styles = [
+                  '/assets/css/vendor/animate.min.css',
+                  '/assets/css/plugins/swiper.min.css',
+                  '/assets/css/vendor/fontawesome-pro.css',
+                  '/assets/css/vendor/spacing.css',
+                  '/assets/css/main.css'
+                ];
+                styles.forEach(function(href) {
+                  var link = document.createElement('link');
+                  link.rel = 'stylesheet';
+                  link.href = href;
+                  document.head.appendChild(link);
+                });
+                var preconnect1 = document.createElement('link');
+                preconnect1.rel = 'preconnect';
+                preconnect1.href = 'https://fonts.googleapis.com';
+                document.head.appendChild(preconnect1);
+                var preconnect2 = document.createElement('link');
+                preconnect2.rel = 'preconnect';
+                preconnect2.href = 'https://fonts.gstatic.com';
+                preconnect2.crossOrigin = '';
+                document.head.appendChild(preconnect2);
+                var fontLink = document.createElement('link');
+                fontLink.rel = 'stylesheet';
+                fontLink.href = 'https://fonts.googleapis.com/css2?family=Sofia&display=swap';
+                document.head.appendChild(fontLink);
+              })();
+            `,
+          }}
+        />
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
