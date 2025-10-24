@@ -1,13 +1,4 @@
-/* Import original CSS files */
-@import url('/assets/css/vendor/animate.min.css');
-@import url('/assets/css/plugins/swiper.min.css');
-@import url('/assets/css/vendor/fontawesome-pro.css');
-@import url('/assets/css/vendor/spacing.css');
-@import url('/assets/css/main.css');
-
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
-
+/* Global base styles */
 * {
   box-sizing: border-box;
   padding: 0;
