@@ -1,10 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Breadcrumb from '@/components/common/Breadcrumb';
 import CountryDetailsTwoContent from '@/components/country-details-two/CountryDetailsTwoContent';
 import CountryDetailsSidebar from '@/components/country-details-two/CountryDetailsSidebar';
+
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';
 
 interface Country {
   id: string;
@@ -26,7 +29,7 @@ interface Country {
   universities: any[];
 }
 
-export default function CountryDetailsTwoPage() {
+function CountryDetailsContent() {
   const searchParams = useSearchParams();
   const [countries, setCountries] = useState<Country[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
@@ -251,5 +254,19 @@ export default function CountryDetailsTwoPage() {
         </div>
       </section>
     </main>
+  );
+}
+
+export default function CountryDetailsTwoPage() {
+  return (
+    <Suspense fallback={
+      <main>
+        <div className="container section-space">
+          <div className="text-center">Loading country details...</div>
+        </div>
+      </main>
+    }>
+      <CountryDetailsContent />
+    </Suspense>
   );
 }
