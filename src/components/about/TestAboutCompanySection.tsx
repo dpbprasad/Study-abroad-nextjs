@@ -361,7 +361,7 @@ export default function TestAboutCompanySection() {
                     <h5>Our Vision</h5>
                   </div>
                   <p className="wow fadeInLeft animated" data-wow-delay=".2s" style={{ flex: '1' }}>
-                    To become the leading and most reliable educational counseling and student recruitment firm in Asia.
+                    To be the leading and most reliable educational counseling and student recruitment firm in Asia.
                   </p>
                 </div>
               </div>
