@@ -49,3 +49,5 @@ src/app/api/admin.backup/
 
 # Backup files
 *.bak
+
+.vercel
