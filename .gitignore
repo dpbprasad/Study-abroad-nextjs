@@ -41,3 +41,11 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated/prisma
+
+# Database backups (archived for future use)
+prisma.backup/
+src/lib/prisma.ts.backup
+src/app/api/admin.backup/
+
+# Backup files
+*.bak
