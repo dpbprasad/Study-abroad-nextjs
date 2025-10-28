@@ -286,6 +286,13 @@ export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  // TEMPORARILY DISABLED: Database operations not available in production
+  return NextResponse.json(
+    { error: 'Update operation is temporarily disabled' },
+    { status: 503 }
+  );
+
+  /* ORIGINAL CODE - DISABLED FOR NOW
   try {
     const { slug } = await params;
     const body = await request.json();
@@ -313,12 +320,20 @@ export async function PATCH(
       { status: 500 }
     );
   }
+  */
 }
 
 export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  // TEMPORARILY DISABLED: Database operations not available in production
+  return NextResponse.json(
+    { error: 'Delete operation is temporarily disabled' },
+    { status: 503 }
+  );
+
+  /* ORIGINAL CODE - DISABLED FOR NOW
   try {
     const { slug } = await params;
 
@@ -334,4 +349,5 @@ export async function DELETE(
       { status: 500 }
     );
   }
+  */
 }
