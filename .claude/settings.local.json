@@ -1,16 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(sed -n '470,480p' \"D:\\My Work Space\\React Convert\\study-abroad-nextjs\\src\\components\\about\\TestAboutCompanySection.tsx\")",
-      "Bash(cp \"D:\\My Work Space\\React Convert\\study-abroad-nextjs\\src\\components\\about\\TestAboutCompanySection.tsx\" \"D:\\My Work Space\\React Convert\\study-abroad-nextjs\\src\\components\\about\\TestAboutCompanySection.tsx.bak\")",
-      "Bash(awk 'NR>=745 && NR<=760' \"D:\\My Work Space\\React Convert\\study-abroad-nextjs\\src\\components\\about\\TestAboutCompanySection.tsx\")",
-      "Bash(npm run dev)",
-      "Bash(taskkill /F /PID 12840)",
-      "Bash(taskkill //F //PID 12840)",
-      "Read(//d/My Work Space/React Convert/**)",
-      "Bash(dir \"D:\\My Work Space\\React Convert\\assets\\img\\bg-assets\")",
-      "Bash(mkdir -p \"public/assets/img/bg-assets\")",
-      "Bash(rm:*)"
+      "Bash(npm install:*)",
+      "Bash(find:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []

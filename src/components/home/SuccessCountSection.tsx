@@ -5,9 +5,10 @@ import { useEffect, useRef } from 'react';
 
 interface SuccessCountSectionProps {
   grayBg?: boolean;
+  noTopPadding?: boolean;
 }
 
-export default function SuccessCountSection({ grayBg = true }: SuccessCountSectionProps) {
+export default function SuccessCountSection({ grayBg = true, noTopPadding = false }: SuccessCountSectionProps) {
   const counter1Ref = useRef<HTMLSpanElement>(null);
   const counter2Ref = useRef<HTMLSpanElement>(null);
   const counter3Ref = useRef<HTMLSpanElement>(null);
@@ -42,7 +43,7 @@ export default function SuccessCountSection({ grayBg = true }: SuccessCountSecti
   }, []);
 
   return (
-    <section className={`section-space counter position-relative overflow-hidden${grayBg ? ' gray-bg' : ''}`}>
+    <section className={`${noTopPadding ? 'section-space-bottom' : 'section-space'} counter position-relative overflow-hidden${grayBg ? ' gray-bg' : ''}`}>
       <style jsx>{`
         /* FAQ Content Box - Responsive */
         .faq-content-wrapper {

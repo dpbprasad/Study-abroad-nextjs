@@ -127,7 +127,10 @@ export default function DestinationsSlider() {
                           <h4>{dest.name}</h4>
                           <p>{dest.description}</p>
                           <div className="button">
-                            <Link href={`/country-details-two?country=${dest.slug}`}>
+                            <Link
+                              href={`/country-details-two?country=${dest.slug}`}
+                              className="transparent-bg-btn"
+                            >
                               More Details <i className="fa-solid fa-arrow-right"></i>
                             </Link>
                           </div>

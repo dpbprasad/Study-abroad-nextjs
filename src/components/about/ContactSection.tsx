@@ -29,7 +29,7 @@ export default function ContactSection() {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="contact-us__widget mb-30" data-tilt>
-              <img src="/assets/img/contact/contact-left-img.png" alt="img not found" />
+              <img src="/assets/imgs/contact/contact-left-img.png" alt="img not found" />
             </div>
           </div>
           <div className="col-lg-6">

@@ -20,7 +20,7 @@ export default function TestAboutUsPage() {
 
       <ProcessSection variant="about" />
 
-      <SuccessCountSection grayBg={false} />
+      <SuccessCountSection grayBg={false} noTopPadding={true} />
 
       <UniversityLogos grayBg={false} />
 

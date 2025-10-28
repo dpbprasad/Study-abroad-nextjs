@@ -7,6 +7,7 @@ import ColorProvider from '../ColorProvider';
 import CustomCursor from '../CustomCursor';
 import Preloader from '../Preloader';
 import WOWInitializer from '../WOWInitializer';
+import VanillaTiltInitializer from '../VanillaTiltInitializer';
 import ScrollPercentage from '../ScrollPercentage';
 import VideoPopup from '../VideoPopup';
 
@@ -24,6 +25,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
         <ColorProvider />
         <CustomCursor />
         <WOWInitializer />
+        <VanillaTiltInitializer />
         <ScrollPercentage />
         <VideoPopup />
         {children}
@@ -38,6 +40,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
       <ColorProvider />
       <CustomCursor />
       <WOWInitializer />
+      <VanillaTiltInitializer />
       <ScrollPercentage />
       <VideoPopup />
       <Header />

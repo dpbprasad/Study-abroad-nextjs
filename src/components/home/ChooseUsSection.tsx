@@ -141,15 +141,15 @@ export default function ChooseUsSection({ grayBg = true, removeTopPadding = fals
                   <div className="choose-us__button-btn wow fadeInLeft animated" data-wow-delay=".7s">
                     <Link href="/story" className="rr-btn-rounded">Read More</Link>
                   </div>
-                  <div className="choose-us__button-text wow fadeInLeft animated" data-wow-delay=".8s">
+                  <a href="tel:+94112512515" className="choose-us__button-text wow fadeInLeft animated" data-wow-delay=".8s" style={{ textDecoration: 'none', cursor: 'pointer', display: 'flex' }}>
                     <div className="choose-us__button-text-icon">
                       <i className="fa-solid fa-phone"></i>
                     </div>
                     <div className="choose-us__button-text-number">
                       <h6>Need help?</h6>
-                      <a href="tel:+94112512515">+94 112 512 515</a>
+                      <span style={{ color: 'inherit' }}>+94 112 512 515</span>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ export default function CoachingSection() {
           modules: [Navigation],
           slidesPerView: 1,
           spaceBetween: 30,
-          loop: false,
+          loop: true,
           navigation: {
             nextEl: '.team__slider-button-next',
             prevEl: '.team__slider-button-prev',
@@ -55,6 +55,24 @@ export default function CoachingSection() {
       image: '/assets/img/coaching/h-coaching/h-oet.png',
       delay: '.4s'
     },
+    {
+      title: 'PTE Coaching',
+      description: 'There are many variati of <br> passages of engineer',
+      image: '/assets/img/coaching/h-coaching/h-tofel.png',
+      delay: '.5s'
+    },
+    {
+      title: 'SAT Coaching',
+      description: 'There are many variati of <br> passages of engineer',
+      image: '/assets/img/coaching/h-coaching/h-ielts.png',
+      delay: '.6s'
+    },
+    {
+      title: 'GRE Coaching',
+      description: 'There are many variati of <br> passages of engineer',
+      image: '/assets/img/coaching/h-coaching/h-oet.png',
+      delay: '.7s'
+    },
   ];
 
   return (
@@ -86,10 +104,10 @@ export default function CoachingSection() {
                 <Link href="/coaching" className="rr-btn me-3 wow fadeInLeft animated" data-wow-delay=".3s">
                   View All Programs
                 </Link>
-                <button className="section-slider-title-2-button-right team__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s">
+                <button className="section-slider-title-2-button-right team__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s" style={{ display: 'inline-block', opacity: 1, pointerEvents: 'auto', visibility: 'visible' }}>
                   <i className="fa-solid fa-arrow-left"></i>
                 </button>
-                <button className="section-slider-title-2-button-right team__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s">
+                <button className="section-slider-title-2-button-right team__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s" style={{ display: 'inline-block', opacity: 1, pointerEvents: 'auto', visibility: 'visible' }}>
                   <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>

@@ -329,7 +329,7 @@ export default function TestAboutCompanySection() {
             </div>
 
             {/* Introduction to Mission & Vision */}
-            <div className="blog-details__content" style={{ marginBottom: '120px' }}>
+            <div className="blog-details__content" style={{ marginBottom: '60px' }}>
               <div className="blog-details__content-text">
                 <p className="wow fadeInLeft animated" data-wow-delay=".4s" style={{ textAlign: 'justify', fontSize: '16px', lineHeight: '1.8', color: '#555', margin: 0 }}>
                   We are dedicated to connecting aspiring students with esteemed higher education institutions worldwide. Our approach helps students explore diverse academic fields that align with their unique strengths and career aspirations, while fostering personal growth, professional development, and the ability to make meaningful social impact in their chosen fields.
@@ -508,7 +508,7 @@ export default function TestAboutCompanySection() {
             </div>
 
             {/* Why Students Choose Us */}
-            <div className="blog-details__content" style={{ marginBottom: '120px' }}>
+            <div className="blog-details__content" style={{ marginBottom: '60px' }}>
               <div className="text-center mb-40">
                 <h3 className="wow fadeInUp animated" data-wow-delay=".3s" style={{ color: '#034833', fontSize: '32px', fontWeight: '700' }}>
                   Why Students Choose Us

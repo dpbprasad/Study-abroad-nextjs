@@ -2647,7 +2647,7 @@ textarea {
   height: 60px;
   width: 60px;
   border: 1px solid #E3DBD8;
-  background: #034833;
+  background: transparent;
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -13876,6 +13876,15 @@ body .ui-tooltip {
 }
 .project-three__single-content .button a:hover {
   background: var(--rr-heading-primary);
+  color: var(--rr-common-white);
+  border-color: var(--rr-heading-primary);
+}
+.project-three__single-content .button a.transparent-bg-btn {
+  background: transparent !important;
+  border: 1px solid var(--rr-common-white);
+}
+.project-three__single-content .button a.transparent-bg-btn:hover {
+  background: var(--rr-heading-primary) !important;
   color: var(--rr-common-white);
   border-color: var(--rr-heading-primary);
 }

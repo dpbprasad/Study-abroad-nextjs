@@ -13,7 +13,7 @@ export default function BlogSection() {
           modules: [Navigation],
           slidesPerView: 1,
           spaceBetween: 30,
-          loop: false,
+          loop: true,
           navigation: {
             nextEl: '.blog__slider-button-next',
             prevEl: '.blog__slider-button-prev',
@@ -60,6 +60,30 @@ export default function BlogSection() {
       excerpt: 'Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum',
       delay: '.4s'
     },
+    {
+      image: '/assets/img/blogs/1/blog1-card.jpg',
+      date: 'October 18, 2025',
+      author: 'admin',
+      title: 'Journey Through Cultural Heritage Sites',
+      excerpt: 'Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum',
+      delay: '.5s'
+    },
+    {
+      image: '/assets/img/blogs/1/blog1-card.jpg',
+      date: 'October 17, 2025',
+      author: 'admin',
+      title: 'Exploring Hidden Gems Around the World',
+      excerpt: 'Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum',
+      delay: '.6s'
+    },
+    {
+      image: '/assets/img/blogs/1/blog1-card.jpg',
+      date: 'October 16, 2025',
+      author: 'admin',
+      title: 'Study Abroad Success Stories and Tips',
+      excerpt: 'Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum',
+      delay: '.7s'
+    },
   ];
 
   return (
@@ -82,11 +106,11 @@ export default function BlogSection() {
                 </h2>
               </div>
               <div className="section-slider-title-3-button d-flex align-items-center">
-                <Link href="/blog-grid" className="rr-btn me-3 wow fadeInLeft animated" data-wow-delay=".3s">View All Blogs</Link>
-                <button className="section-slider-title-3-button-right blog__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s">
+                <Link href="/blog" className="rr-btn me-3 wow fadeInLeft animated" data-wow-delay=".3s">View All Blogs</Link>
+                <button className="section-slider-title-3-button-right blog__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s" style={{ display: 'inline-block', opacity: 1, pointerEvents: 'auto', visibility: 'visible' }}>
                   <i className="fa-solid fa-arrow-left"></i>
                 </button>
-                <button className="section-slider-title-3-button-right blog__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s">
+                <button className="section-slider-title-3-button-right blog__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s" style={{ display: 'inline-block', opacity: 1, pointerEvents: 'auto', visibility: 'visible' }}>
                   <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>

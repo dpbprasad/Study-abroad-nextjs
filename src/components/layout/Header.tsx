@@ -62,6 +62,14 @@ export default function Header() {
                             <li><Link href="/country-details-two">Country Details Two</Link></li>
                           </ul>
                         </li>
+                        <li id="nav-resources" className="has-dropdown">
+                          <Link href="#">Resources</Link>
+                          <ul className="submenu">
+                            <li><Link href="/blog">Blog</Link></li>
+                            <li><Link href="/faq">FAQ</Link></li>
+                            <li><Link href="/coaching">Coaching</Link></li>
+                          </ul>
+                        </li>
                         <li id="nav-blog" className="has-dropdown">
                           <Link href="/blog">Blog</Link>
                           <ul className="submenu">
