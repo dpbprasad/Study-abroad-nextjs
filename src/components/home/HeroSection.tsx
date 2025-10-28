@@ -8,11 +8,6 @@ export default function HeroSection() {
       <div className="banner-home">
         <div className="banner-wrap padding-space dark-green">
           <div className="container">
-            <div className="banner-home__all-shape">
-              <div className="left-tower upDown-top">
-                <img src="/assets/img/hero/banner-left-towor.png" alt="img not found" />
-              </div>
-            </div>
             <div className="row align-items-center">
               <div className="col-md-6">
                 <div className="banner-home__content p-relative">

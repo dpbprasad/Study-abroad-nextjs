@@ -83,14 +83,12 @@ export default function BlogSection() {
               </div>
               <div className="section-slider-title-3-button d-flex align-items-center">
                 <Link href="/blog-grid" className="rr-btn me-3 wow fadeInLeft animated" data-wow-delay=".3s">View All Blogs</Link>
-                <div className="d-flex" style={{ gap: '15px' }}>
-                  <button className="section-slider-title-3-button-right blog__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <i className="fa-solid fa-arrow-left"></i>
-                  </button>
-                  <button className="section-slider-title-3-button-right blog__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </button>
-                </div>
+                <button className="section-slider-title-3-button-right blog__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s">
+                  <i className="fa-solid fa-arrow-left"></i>
+                </button>
+                <button className="section-slider-title-3-button-right blog__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s">
+                  <i className="fa-solid fa-arrow-right"></i>
+                </button>
               </div>
             </div>
           </div>

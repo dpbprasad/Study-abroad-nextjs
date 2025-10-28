@@ -39,28 +39,27 @@ export default function CoachingSection() {
   const coachingPrograms = [
     {
       title: 'TOFEL Coaching',
-      description: 'There are many variati of passages of engineer',
+      description: 'There are many variati of <br> passages of engineer',
       image: '/assets/img/coaching/h-coaching/h-tofel.png',
       delay: '.2s'
     },
     {
       title: 'IELTS Coaching',
-      description: 'There are many variati of passages of engineer',
+      description: 'There are many variati of <br> passages of engineer',
       image: '/assets/img/coaching/h-coaching/h-ielts.png',
       delay: '.3s'
     },
     {
       title: 'OET Coaching',
-      description: 'There are many variati of passages of engineer',
+      description: 'There are many variati of <br> passages of engineer',
       image: '/assets/img/coaching/h-coaching/h-oet.png',
       delay: '.4s'
     },
   ];
 
   return (
-    <section className="overflow-hidden gray-bg">
-      <div className="latest-team__area">
-        <div className="container">
+    <section className="latest-team__area overflow-hidden gray-bg">
+      <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="section-slider-title-2 mb-60">
@@ -87,14 +86,12 @@ export default function CoachingSection() {
                 <Link href="/coaching" className="rr-btn me-3 wow fadeInLeft animated" data-wow-delay=".3s">
                   View All Programs
                 </Link>
-                <div className="d-flex">
-                  <button className="section-slider-title-2-button-right team__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s" style={{ display: 'flex !important', alignItems: 'center', justifyContent: 'center', marginRight: '15px' }}>
-                    <i className="fa-solid fa-arrow-left"></i>
-                  </button>
-                  <button className="section-slider-title-2-button-right team__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s" style={{ display: 'flex !important', alignItems: 'center', justifyContent: 'center' }}>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </button>
-                </div>
+                <button className="section-slider-title-2-button-right team__slider-button-prev wow fadeInLeft animated" data-wow-delay=".4s">
+                  <i className="fa-solid fa-arrow-left"></i>
+                </button>
+                <button className="section-slider-title-2-button-right team__slider-button-next wow fadeInLeft animated" data-wow-delay=".5s">
+                  <i className="fa-solid fa-arrow-right"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -108,7 +105,7 @@ export default function CoachingSection() {
                   {coachingPrograms.map((program, index) => (
                     <div key={index} className={`swiper-slide latest-team__item-slide wow fadeInLeft animated`} data-wow-delay={program.delay}>
                       <div className="latest-team__item-media">
-                        <div className="latest-item_thumb" data-tilt>
+                        <div className="latest-item_thumb">
                           <Link href="/coaching-details">
                             <img src={program.image} alt="images not found" className="img-fluid" />
                           </Link>
@@ -131,7 +128,6 @@ export default function CoachingSection() {
               </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>

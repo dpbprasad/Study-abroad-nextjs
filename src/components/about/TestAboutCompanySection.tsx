@@ -739,7 +739,7 @@ export default function TestAboutCompanySection() {
                         </div>
                       </div>
                       <div className="choose-us__media-img">
-                        <div className="choose-us__text">
+                        <div className="choose-us__text wow fadeInLeft animated" data-wow-delay=".5s">
                           <h3 className="counter__item-title">
                             <span>18</span>
                           </h3>
@@ -859,7 +859,7 @@ export default function TestAboutCompanySection() {
                           </div>
                           <div className="choose-us__button-text-number">
                             <h6>Need help?</h6>
-                            <a href="tel:(011)111-1111">(011) 111-1111</a>
+                            <a href="tel:+94112512515">+94 112 512 515</a>
                           </div>
                         </div>
                       </div>

@@ -4,6 +4,11 @@ import { usePathname } from 'next/navigation';
 import Header from './Header';
 import Footer from './Footer';
 import ColorProvider from '../ColorProvider';
+import CustomCursor from '../CustomCursor';
+import Preloader from '../Preloader';
+import WOWInitializer from '../WOWInitializer';
+import ScrollPercentage from '../ScrollPercentage';
+import VideoPopup from '../VideoPopup';
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -15,7 +20,12 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   if (isAdminRoute) {
     return (
       <>
+        <Preloader />
         <ColorProvider />
+        <CustomCursor />
+        <WOWInitializer />
+        <ScrollPercentage />
+        <VideoPopup />
         {children}
       </>
     );
@@ -24,7 +34,12 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   // Otherwise, render with Header and Footer
   return (
     <>
+      <Preloader />
       <ColorProvider />
+      <CustomCursor />
+      <WOWInitializer />
+      <ScrollPercentage />
+      <VideoPopup />
       <Header />
       <main>{children}</main>
       <Footer />

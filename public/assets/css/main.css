@@ -9539,6 +9539,7 @@ body .ui-tooltip {
   padding: 30px 40px;
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
+  transition: all 0.3s ease;
 }
 .process__item-number {
   font-family: var(--rr-ff-heading);
@@ -9549,6 +9550,7 @@ body .ui-tooltip {
   font-style: normal;
   -webkit-text-stroke-width: 1px;
   -webkit-text-fill-color: transparent;
+  transition: -webkit-text-stroke-color 0.3s ease;
 }
 .process__item h5 {
   font-family: var(--rr-ff-heading);
@@ -9557,6 +9559,7 @@ body .ui-tooltip {
   line-height: var(--rr-lh-h5);
   font-size: 21px;
   font-style: normal;
+  transition: color 0.3s ease;
 }
 .process__item p {
   font-family: var(--rr-ff-heading);
@@ -9566,6 +9569,19 @@ body .ui-tooltip {
   font-size: 16px;
   font-style: normal;
   margin-bottom: 0;
+  transition: color 0.3s ease;
+}
+.process__item:hover {
+  background: var(--rr-background-dark-green);
+}
+.process__item:hover .process__item-number {
+  -webkit-text-stroke-color: var(--rr-common-white);
+}
+.process__item:hover h5 {
+  color: var(--rr-common-white);
+}
+.process__item:hover p {
+  color: var(--rr-common-white);
 }
 .process__item-2 {
   margin-top: 40px;

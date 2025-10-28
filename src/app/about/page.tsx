@@ -1,25 +1,22 @@
 import Breadcrumb from '@/components/common/Breadcrumb';
-import AboutCompanySection from '@/components/about/AboutCompanySection';
-import ChooseUsSection from '@/components/home/ChooseUsSection';
+import TestAboutCompanySection from '@/components/about/TestAboutCompanySection';
 import ProcessSection from '@/components/home/ProcessSection';
 import SuccessCountSection from '@/components/home/SuccessCountSection';
 import UniversityLogos from '@/components/home/UniversityLogos';
 import ContactSection from '@/components/about/ContactSection';
 
-export default function AboutPage() {
+export default function TestAboutUsPage() {
   return (
     <>
       <Breadcrumb
-        title="About Us"
+        title="About Us - Test"
         items={[
           { label: 'Home', href: '/' },
-          { label: 'About Us', active: true }
+          { label: 'Test About Us', active: true }
         ]}
       />
 
-      <AboutCompanySection />
-
-      <ChooseUsSection grayBg={false} />
+      <TestAboutCompanySection />
 
       <ProcessSection variant="about" />
 

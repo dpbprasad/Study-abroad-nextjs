@@ -45,12 +45,8 @@ export default function Header() {
                         <li id="nav-home">
                           <Link href="/">Home</Link>
                         </li>
-                        <li id="nav-about" className="has-dropdown">
+                        <li id="nav-about">
                           <Link href="/about">About Us</Link>
-                          <ul className="submenu">
-                            <li><Link href="/about">About Us</Link></li>
-                            <li><Link href="/test-about-us">Test About Us</Link></li>
-                          </ul>
                         </li>
                         <li id="nav-services">
                           <Link href="/services">Services</Link>
@@ -63,7 +59,21 @@ export default function Header() {
                           <ul className="submenu">
                             <li><Link href="/countries">Countries</Link></li>
                             <li><Link href="/country-info">Country Details</Link></li>
+                            <li><Link href="/country-details-two">Country Details Two</Link></li>
                           </ul>
+                        </li>
+                        <li id="nav-blog" className="has-dropdown">
+                          <Link href="/blog">Blog</Link>
+                          <ul className="submenu">
+                            <li><Link href="/blog">Blog</Link></li>
+                            <li><Link href="/blog-details">Blog Details</Link></li>
+                          </ul>
+                        </li>
+                        <li id="nav-faq">
+                          <Link href="/faq">FAQ</Link>
+                        </li>
+                        <li id="nav-contact">
+                          <Link href="/contact">Contact</Link>
                         </li>
                       </ul>
                     </nav>

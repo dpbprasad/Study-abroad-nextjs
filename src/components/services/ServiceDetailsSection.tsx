@@ -440,7 +440,7 @@ export default function ServiceDetailsSection() {
                 </svg>
               </div>
               <h3 className="mt-15">GET TOUCH</h3>
-              <a href="tel:+888123456765">(+888) 123 456 765</a>
+              <a href="tel:+94112512515">+94 112 512 515</a>
             </div>
             </div>
           </div>
