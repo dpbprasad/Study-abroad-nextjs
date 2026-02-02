@@ -1,20 +1,11 @@
 'use client';
 
-import { Section, Container, Grid } from '@/components/layout';
-import { Card, Heading } from '@/components/ui';
-
-/**
- * ServiceCards Component - REFACTORED VERSION
- *
- * Refactored to use new layout and UI primitive components.
- * Cleaner, more maintainable, and follows the new component architecture.
- */
-
 export default function ServiceCards() {
   const services = [
     {
       title: 'Student Visa',
       description: 'Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac',
+      delay: '.2s',
       icon: (
         <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_3919_73)">
@@ -33,6 +24,7 @@ export default function ServiceCards() {
     {
       title: 'Spouse Visa',
       description: 'Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac',
+      delay: '.3s',
       icon: (
         <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.67969 20.0977C6.67969 24.3516 10.125 27.8672 14.4492 27.8672C18.7383 27.8672 22.2187 24.3867 22.2187 20.0977C22.2187 15.8789 18.8086 12.3281 14.4492 12.3281C10.1953 12.3281 6.67969 15.8086 6.67969 20.0977ZM20.3555 22.875H18.3867C18.5273 22.1719 18.6328 21.4336 18.6328 20.6953H20.9531C20.918 21.4687 20.707 22.207 20.3555 22.875ZM7.94531 20.6953H10.2656C10.3008 21.4336 10.3711 22.1367 10.5117 22.875H8.54297C8.19141 22.207 8.01562 21.4687 7.94531 20.6953ZM11.4961 20.6953H13.8516V22.875H11.7773C11.6016 22.1719 11.4961 21.4336 11.4961 20.6953ZM13.8516 24.1055V26.4609C13.2187 26.1445 12.5859 25.3008 12.1289 24.1055H13.8516ZM15.082 26.4961V24.1406H16.8047C16.3125 25.3008 15.7148 26.1445 15.082 26.4961ZM15.082 22.875V20.6953H17.4375C17.4023 21.4336 17.2969 22.1719 17.1562 22.875H15.082ZM20.9883 19.5H18.668C18.6328 18.7617 18.5625 18.0586 18.4219 17.3203H20.3906C20.707 17.9883 20.918 18.7266 20.9883 19.5ZM17.4375 19.5H15.082V17.3203H17.1562C17.2969 18.0234 17.4023 18.7617 17.4375 19.5ZM15.082 16.0898V13.7344C15.7148 14.0508 16.3477 14.8945 16.8047 16.0898H15.082ZM13.8516 13.6992V16.0547H12.1289C12.5859 14.8945 13.1836 14.0508 13.8516 13.6992ZM13.8516 17.3203V19.5H11.4961C11.5312 18.7617 11.6367 18.0234 11.7773 17.3203H13.8516ZM10.2656 19.5H7.94531C8.01562 18.7617 8.22656 18.0234 8.54297 17.3203H10.5117C10.3711 18.0234 10.2656 18.7617 10.2656 19.5ZM9.28125 24.1055H10.8281C11.0391 24.7734 11.3203 25.4414 11.707 26.0391C10.7578 25.582 9.94922 24.9492 9.28125 24.1055ZM17.1914 26.0391C17.5781 25.4414 17.8594 24.8086 18.0703 24.1055H19.6172C18.9844 24.9492 18.1406 25.582 17.1914 26.0391ZM19.6172 16.0898H18.0703C17.8594 15.4219 17.5781 14.7891 17.1914 14.1562C18.1406 14.6133 18.9844 15.2461 19.6172 16.0898ZM11.707 14.1562C11.3203 14.7539 11.0391 15.3867 10.8281 16.0898H9.28125C9.94922 15.2461 10.7578 14.6133 11.707 14.1562Z" fill="white"/>
@@ -46,6 +38,7 @@ export default function ServiceCards() {
     {
       title: 'Guardian Visa',
       description: 'Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac',
+      delay: '.4s',
       icon: (
         <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M44.3848 9.8125H11.7348C11.644 9.81245 11.5543 9.8325 11.4722 9.87122C11.3901 9.90994 11.3176 9.96637 11.2598 10.0364L9.88875 11.7014L8.51766 10.0364C8.45993 9.96637 8.3874 9.90994 8.30528 9.87122C8.22316 9.8325 8.13349 9.81245 8.0427 9.8125H0.615234C0.534411 9.8125 0.45438 9.82843 0.379713 9.85937C0.305047 9.89031 0.237208 9.93566 0.180074 9.99282C0.122939 10.05 0.0776288 10.1179 0.0467311 10.1925C0.0158333 10.2672 -4.60843e-05 10.3473 1.00456e-07 10.4281V34.6859C1.00456e-07 34.8491 0.0648192 35.0056 0.180198 35.1209C0.295577 35.2363 0.452064 35.3011 0.615234 35.3011H8.04059C8.13138 35.3012 8.22105 35.2811 8.30317 35.2424C8.38529 35.2037 8.45782 35.1473 8.51555 35.0772L9.88664 33.4122L11.2577 35.0772C11.3155 35.1473 11.388 35.2037 11.4701 35.2424C11.5522 35.2811 11.6419 35.3012 11.7327 35.3011H44.3848C44.4656 35.3012 44.5456 35.2853 44.6203 35.2544C44.6949 35.2235 44.7628 35.1782 44.8199 35.121C44.877 35.0639 44.9224 34.9961 44.9533 34.9214C44.9842 34.8467 45 34.7667 45 34.6859V10.4281C45.0001 10.3472 44.9842 10.2672 44.9534 10.1925C44.9225 10.1178 44.8772 10.0499 44.82 9.99272C44.7629 9.93554 44.695 9.8902 44.6203 9.85927C44.5457 9.82835 44.4656 9.81245 44.3848 9.8125ZM1.23047 11.043H7.7502L9.41273 13.0602C9.47242 13.1271 9.54556 13.1805 9.62735 13.2172C9.70913 13.2538 9.79773 13.2727 9.88734 13.2727C9.97695 13.2727 10.0656 13.2538 10.1473 13.2172C10.2291 13.1805 10.3023 13.1271 10.362 13.0602L12.0245 11.043H43.7706V29.8104H1.23047V11.043ZM43.7695 34.0703H12.0252L10.3627 32.053C10.303 31.9862 10.2298 31.9327 10.148 31.8961C10.0663 31.8595 9.97766 31.8406 9.88805 31.8406C9.79844 31.8406 9.70984 31.8595 9.62805 31.8961C9.54626 31.9327 9.47313 31.9862 9.41344 32.053L7.7509 34.0703H1.23047V31.0409H43.7695V34.0703Z" fill="white"/>
@@ -61,6 +54,7 @@ export default function ServiceCards() {
     {
       title: 'PR Pathway Programs',
       description: 'Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac',
+      delay: '.5s',
       icon: (
         <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M42.1875 12.375H38.9063V9.09375C38.9063 4.08188 34.8244 0 29.8125 0H15.1875C10.1756 0 6.09375 4.08188 6.09375 9.09375V12.375H2.8125C1.26188 12.375 0 13.6369 0 15.1875V42.1875C0 43.7381 1.26188 45 2.8125 45H42.1875C43.7381 45 45 43.7381 45 42.1875V15.1875C45 13.6369 43.7381 12.375 42.1875 12.375ZM9.375 9.09375C9.375 5.88938 12.0831 3.28125 15.1875 3.28125H29.8125C32.9169 3.28125 35.625 5.88938 35.625 9.09375V12.375H9.375V9.09375ZM41.7188 41.7188H3.28125V15.6562H6.5625V19.2188C6.5625 20.1263 7.30125 20.8594 8.20312 20.8594C9.105 20.8594 9.84375 20.1206 9.84375 19.2188V15.6562H35.1562V19.2188C35.1562 20.1263 35.8894 20.8594 36.7969 20.8594C37.7044 20.8594 38.4375 20.1206 38.4375 19.2188V15.6562H41.7188V41.7188Z" fill="white"/>
@@ -72,48 +66,44 @@ export default function ServiceCards() {
   ];
 
   return (
-    <Section variant="gray" spacing="lg" className="overflow-hidden">
-      <Container className="px-0">
-        <Grid
-          cols={{ xs: 1, sm: 2, md: 2, lg: 4 }}
-          gap={0}
-          className="service-cards-grid"
-        >
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              variant="default"
-              padding="lg"
-              className="service-card h-full border-0 rounded-none hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="service-card-icon mb-6 w-16 h-16 bg-[#00AF5B] rounded-full flex items-center justify-center">
-                {service.icon}
-              </div>
-              <Heading
-                level="h3"
-                size="lg"
-                marginBottom="md"
-                className="text-white"
+    <section className="gray-bg overflow-hidden pt-30">
+      <div className="service right banner-home">
+        <div className="banner-wrap">
+          <div className="row mb-minus-30" style={{ margin: 0, padding: 0, maxWidth: 'none', width: '100%' }}>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`col-xl-3 col-lg-3 col-md-6 col-sm-6 ${index === 0 ? 'first-card' : ''} ${index === services.length - 1 ? 'last-card' : ''}`}
               >
-                {service.title}
-              </Heading>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </Card>
-          ))}
-        </Grid>
-      </Container>
-
+                <div className="service__item mb-30 wow fadeInLeft animated" data-wow-delay={service.delay}>
+                  <div className="service__item-icon">
+                    {service.icon}
+                  </div>
+                  <div className="service__item-content">
+                    <h4>{service.title}</h4>
+                    <p>{service.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       <style jsx>{`
-        :global(.service-card) {
-          background: linear-gradient(135deg, #1a4d2e 0%, #00693e 100%);
+        .service .banner-wrap {
+          padding: 0 !important;
         }
-        :global(.service-card:hover .service-card-icon) {
-          transform: scale(1.1);
-          transition: transform 0.3s ease;
+        .service .row.mb-minus-30 {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+        .service .row.mb-minus-30 [class*=col-]:first-child {
+          padding-left: 0 !important;
+        }
+        .service .row.mb-minus-30 [class*=col-]:last-child {
+          padding-right: 0 !important;
         }
       `}</style>
-    </Section>
+    </section>
   );
 }
