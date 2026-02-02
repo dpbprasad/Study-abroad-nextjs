@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={sofia.variable}>
-      <body>
+      <body suppressHydrationWarning>
         <LayoutWrapper>{children}</LayoutWrapper>
 
         {/* Bootstrap JS - loaded after interactive for better performance */}
