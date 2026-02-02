@@ -36,7 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={sofia.variable}>
       <head>
-        <link rel="stylesheet" href="/assets/css/vendor/animate.min.css" />
         <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
         <link rel="stylesheet" href="/assets/css/vendor/fontawesome-pro.css" />
         <link rel="stylesheet" href="/assets/css/vendor/spacing.css" />
