@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function StorySection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -204,7 +205,7 @@ export default function StorySection() {
                 </div>
                 <div className="story__content-details d-flex mt-40">
                   <div className="story__content-details-img">
-                    <img src={story.image} alt={story.name} />
+                    <Image src={story.image} alt={`${story.name} - ${story.role}`} width={60} height={60} />
                   </div>
                   <div className="story__content-details-name">
                     <h6>{story.name}</h6>
@@ -335,15 +336,15 @@ export default function StorySection() {
                     <div className="story-details__media wow fadeInLeft animated" data-wow-delay=".7s">
                       <div className="story-details__media-wrapper">
                         <div className="story-details__media-wrapper-left-shape">
-                          <img src="/assets/img/testimonial/story-details/story-details-right-shape1.png" alt="img not found" />
+                          <Image src="/assets/img/testimonial/story-details/story-details-right-shape1.png" alt="Decorative shape" width={150} height={150} />
                         </div>
                         <div className="story-details__media-wrapper-right-shape">
-                          <img src="/assets/img/testimonial/story-details/story-details-right-shape2.png" alt="img not found" />
+                          <Image src="/assets/img/testimonial/story-details/story-details-right-shape2.png" alt="Decorative shape" width={150} height={150} />
                         </div>
                       </div>
                       <div className="story-details__media-thumb position-relative">
                         <div className="story-details__media-thumb-box"></div>
-                        <img src="/assets/img/testimonial/story-details/story-details-right-img.png" alt="img not found" />
+                        <Image src="/assets/img/testimonial/story-details/story-details-right-img.png" alt="Successful visa approval to Egypt" width={500} height={600} />
                       </div>
                     </div>
                   </div>

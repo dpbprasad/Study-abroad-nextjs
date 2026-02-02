@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function TestAboutCompanySection() {
   return (
     <section className="section-space" style={{ paddingBottom: 0 }}>
@@ -731,11 +733,11 @@ export default function TestAboutCompanySection() {
                         <div className="choose-us__media-thumb-img">
                           <div className="choose-us__media-thumb-img-green-border wow fadeInLeft animated" data-wow-delay=".3s"></div>
                           <div className="choose-us__media-thumb-img-img wow fadeInLeft animated" data-wow-delay=".4s">
-                            <img src="/assets/img/choose-us/choose-us-left-img.png" alt="img not found" />
+                            <Image src="/assets/img/choose-us/choose-us-left-img.png" alt="International education consultation experts" width={300} height={400} />
                           </div>
                         </div>
                         <div className="choose-us__media-thumb-circle spin">
-                          <img src="/assets/img/choose-us/choose-us-circle-img.png" alt="img not found" />
+                          <Image src="/assets/img/choose-us/choose-us-circle-img.png" alt="Decorative circle" width={200} height={200} />
                         </div>
                       </div>
                       <div className="choose-us__media-img">
@@ -746,7 +748,7 @@ export default function TestAboutCompanySection() {
                           <p>Years Of <br /> Experience</p>
                         </div>
                         <div className="choose-us__media-img-pictute wow fadeInLeft animated" data-wow-delay=".6s">
-                          <img src="/assets/img/choose-us/choose-us-right-img.png" alt="img not found" />
+                          <Image src="/assets/img/choose-us/choose-us-right-img.png" alt="Study abroad success stories" width={300} height={400} />
                         </div>
                       </div>
                     </div>

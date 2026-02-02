@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function NewCountryPage() {
   const router = useRouter();
@@ -202,7 +203,7 @@ export default function NewCountryPage() {
                 {formData.flagGif && (
                   <div style={{ marginTop: '10px' }}>
                     <small style={{ color: '#28a745', display: 'block' }}>✓ Uploaded: {formData.flagGif}</small>
-                    <img src={formData.flagGif} alt="Flag preview" style={{ maxWidth: '100px', marginTop: '5px' }} />
+                    <Image src={formData.flagGif} alt="Flag preview" width={100} height={100} style={{ maxWidth: '100px', marginTop: '5px' }} />
                   </div>
                 )}
                 {uploading.flag && <small style={{ color: '#007bff' }}>Uploading...</small>}
@@ -233,7 +234,7 @@ export default function NewCountryPage() {
                 {formData.backgroundImage && (
                   <div style={{ marginTop: '10px' }}>
                     <small style={{ color: '#28a745', display: 'block' }}>✓ Uploaded: {formData.backgroundImage}</small>
-                    <img src={formData.backgroundImage} alt="Background preview" style={{ maxWidth: '300px', marginTop: '5px' }} />
+                    <Image src={formData.backgroundImage} alt="Background preview" width={300} height={200} style={{ maxWidth: '300px', marginTop: '5px' }} />
                   </div>
                 )}
                 {uploading.background && <small style={{ color: '#007bff' }}>Uploading...</small>}

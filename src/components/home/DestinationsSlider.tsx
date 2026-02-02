@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function DestinationsSlider() {
@@ -119,7 +120,7 @@ export default function DestinationsSlider() {
                     >
                       <div className="project-three__single-inner wow fadeInLeft animated" data-wow-delay={dest.delay}>
                         <div className="project-small-img">
-                          <img src={dest.flag} alt="country flag" />
+                          <Image src={dest.flag} alt={`${dest.name} flag`} width={80} height={80} />
                         </div>
                         <div className="project-three__single-img" style={{ backgroundImage: `url(${dest.bgImage})` }}></div>
                         <div className="bg-overlay"></div>

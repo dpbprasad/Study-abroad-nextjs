@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function BlogDetailsPage() {
   return (
@@ -33,7 +34,7 @@ export default function BlogDetailsPage() {
             <div className="col-lg-8">
               <div className="blog-details__content">
                 <div className="blog-details__content-thumb">
-                  <img src="/assets/imgs/blog/blog-details/blog-details-top-img.png" alt="img not found" />
+                  <Image src="/assets/imgs/blog/blog-details/blog-details-top-img.png" alt="Complete guide to student visa application process" width={800} height={450} priority />
                 </div>
                 <ul className="blog-details__content-meta mt-20 d-flex wow fadeInLeft animated" data-wow-delay=".2s">
                   <li>
@@ -76,7 +77,7 @@ export default function BlogDetailsPage() {
 
               <div className="blog-details__middel mt-30 d-flex">
                 <div className="blog-details__middel-img">
-                  <img src="/assets/imgs/blog/blog-details/blog-details-middel-img.png" alt="img not found" />
+                  <Image src="/assets/imgs/blog/blog-details/blog-details-middel-img.png" alt="Essential documents for student visa" width={400} height={300} />
                 </div>
                 <div className="blog-details__middel-content">
                   <h2 className="blog-details__middel-content-title mb-20 wow fadeInLeft animated" data-wow-delay=".3s">
@@ -190,7 +191,7 @@ export default function BlogDetailsPage() {
                   <div className="sidebar-post__wrapper mt-20">
                     <div className="sidebar-post">
                       <Link href="/blog-details" className="sidebar-post_thumb">
-                        <img src="/assets/img/blog/blog-right-small-img1.png" alt="post" />
+                        <Image src="/assets/img/blog/blog-right-small-img1.png" alt="Top universities for international students" width={100} height={100} />
                       </Link>
                       <div className="sidebar-post_content">
                         <ul className="post-meta">
@@ -207,7 +208,7 @@ export default function BlogDetailsPage() {
 
                     <div className="sidebar-post">
                       <Link href="/blog-details" className="sidebar-post_thumb">
-                        <img src="/assets/img/blog/blog-right-small-img2.png" alt="post" />
+                        <Image src="/assets/img/blog/blog-right-small-img2.png" alt="Scholarship opportunities for students" width={100} height={100} />
                       </Link>
                       <div className="sidebar-post_content">
                         <ul className="post-meta">
@@ -224,7 +225,7 @@ export default function BlogDetailsPage() {
 
                     <div className="sidebar-post">
                       <Link href="/blog-details" className="sidebar-post_thumb">
-                        <img src="/assets/img/blog/blog-right-small-img3.png" alt="post" />
+                        <Image src="/assets/img/blog/blog-right-small-img3.png" alt="Preparing for IELTS: tips for success" width={100} height={100} />
                       </Link>
                       <div className="sidebar-post_content">
                         <ul className="post-meta">

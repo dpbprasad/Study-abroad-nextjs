@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HeroSection() {
   return (
@@ -48,13 +49,13 @@ export default function HeroSection() {
               <div className="col-md-6">
                 <div className="banner-home__shape position-relative wow fadeInLeft animated" data-wow-delay=".9s">
                   <div className="ball-shape upDown">
-                    <img className="img-fluid" src="/assets/img/hero/banner-bg-ball-shape.png" alt="img not found" />
+                    <Image className="img-fluid" src="/assets/img/hero/banner-bg-ball-shape.png" alt="Background decoration" width={500} height={500} />
                   </div>
                   <div className="man-img leftRight">
-                    <img src="/assets/img/hero/banner-student-img.png" alt="img not found" />
+                    <Image src="/assets/img/hero/banner-student-img.png" alt="Student illustration" width={600} height={700} priority />
                   </div>
                   <div className="right-tower upDown-bottom">
-                    <img src="/assets/img/hero/banner-right-plane.png" alt="img not found" />
+                    <Image src="/assets/img/hero/banner-right-plane.png" alt="Plane illustration" width={300} height={300} />
                   </div>
                 </div>
               </div>

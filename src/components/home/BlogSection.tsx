@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect } from 'react';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
@@ -128,7 +129,7 @@ export default function BlogSection() {
                         <div className="latest-blog__item-slide-inner">
                           <div className="latest-blog__item-media">
                             <Link href="/blog-details">
-                              <img src={blog.image} alt="images not found" className="img-fluid" />
+                              <Image src={blog.image} alt={blog.title} width={400} height={300} className="img-fluid" />
                             </Link>
                           </div>
                           <div className="latest-blog__item-text">
@@ -159,7 +160,7 @@ export default function BlogSection() {
                         <>
                           <div className="latest-blog__item-media">
                             <Link href="/blog-details">
-                              <img src={blog.image} alt="images not found" className="img-fluid" />
+                              <Image src={blog.image} alt={blog.title} width={400} height={300} className="img-fluid" />
                             </Link>
                           </div>
                           <div className="latest-blog__item-text">

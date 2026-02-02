@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -42,7 +43,7 @@ export default function Footer() {
               <div className="footer__widget footer__widget-item-1 wow fadeInLeft animated" data-wow-delay=".2s">
                 <div className="footer__logo mb-30">
                   <Link href="/">
-                    <img src="/assets/img/header/logo.svg" alt="logo" />
+                    <Image src="/assets/img/header/logo.svg" alt="Binarize Migration Consultation Logo" width={150} height={50} />
                   </Link>
                 </div>
                 <div className="footer__content">

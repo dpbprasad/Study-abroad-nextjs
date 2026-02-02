@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 export default function Header() {
@@ -30,7 +31,13 @@ export default function Header() {
                 <div className="header__logo">
                   <Link href="/">
                     <div className="logo">
-                      <img src="/assets/img/header/logo.svg" alt="logo" />
+                      <Image
+                        src="/assets/img/header/logo.svg"
+                        alt="Binarize Migration Consultation Logo"
+                        width={150}
+                        height={50}
+                        priority
+                      />
                     </div>
                   </Link>
                 </div>

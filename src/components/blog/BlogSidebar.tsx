@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface Blog {
@@ -63,7 +64,7 @@ export default function BlogSidebar({ popularPosts }: BlogSidebarProps) {
           {popularPosts.map((post) => (
             <div key={post.id} className="sidebar-post">
               <Link href={`/blog/${post.slug}`} className="sidebar-post_thumb">
-                <img src={post.image} alt={post.title} />
+                <Image src={post.image} alt={post.title} width={100} height={100} />
               </Link>
               <div className="sidebar-post_content">
                 <ul className="post-meta">

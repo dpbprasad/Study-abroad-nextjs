@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface BlogCardProps {
   blog: {
@@ -18,7 +19,7 @@ export default function BlogCard({ blog, delay = '.2s' }: BlogCardProps) {
   return (
     <div className="blog__content">
       <div className="blog__content-thumb">
-        <img src={blog.image} alt={blog.title} />
+        <Image src={blog.image} alt={blog.title} width={800} height={450} />
       </div>
       <ul className="blog__content-meta mt-20 d-flex wow fadeInLeft animated" data-wow-delay={delay}>
         <li>

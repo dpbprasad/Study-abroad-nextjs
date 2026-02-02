@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 interface ChooseUsSectionProps {
@@ -45,11 +46,11 @@ export default function ChooseUsSection({ grayBg = true, removeTopPadding = fals
                   <div className="choose-us__media-thumb-img">
                     <div className="choose-us__media-thumb-img-green-border wow fadeInLeft animated" data-wow-delay=".3s"></div>
                     <div className="choose-us__media-thumb-img-img wow fadeInLeft animated" data-wow-delay=".4s">
-                      <img src="/assets/img/choose-us/choose-us-left-img.png" alt="img not found" />
+                      <Image src="/assets/img/choose-us/choose-us-left-img.png" alt="Study abroad consultation" width={300} height={400} priority />
                     </div>
                   </div>
                   <div className="choose-us__media-thumb-circle spin">
-                    <img src="/assets/img/choose-us/choose-us-circle-img.png" alt="img not found" />
+                    <Image src="/assets/img/choose-us/choose-us-circle-img.png" alt="Decorative circle" width={200} height={200} />
                   </div>
                 </div>
                 <div className="choose-us__media-img">
@@ -60,7 +61,7 @@ export default function ChooseUsSection({ grayBg = true, removeTopPadding = fals
                     <p>Years Of <br /> Experience</p>
                   </div>
                   <div className="choose-us__media-img-pictute wow fadeInLeft animated" data-wow-delay=".6s">
-                    <img src="/assets/img/choose-us/choose-us-right-img.png" alt="img not found" />
+                    <Image src="/assets/img/choose-us/choose-us-right-img.png" alt="International education experts" width={300} height={400} />
                   </div>
                 </div>
               </div>

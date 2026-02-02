@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 /**
  * ServiceDetailsSection Component
@@ -450,7 +451,7 @@ export default function ServiceDetailsSection() {
             {/* Main Content Area */}
             <div ref={detailsContentRef} className="coaching-details__content">
               <div className="coaching-details__content-top-img pb-20" data-tilt>
-                <img src="/assets/img/service/service-details-top-img.png" alt="img not found" />
+                <Image src="/assets/img/service/service-details-top-img.png" alt="Study abroad consultation services" width={800} height={450} priority />
               </div>
               <h2 className="coaching-details__content-title mb-30 wow fadeInLeft animated" data-wow-delay=".3s">
                 {currentService.title}
@@ -490,7 +491,7 @@ export default function ServiceDetailsSection() {
             {/* Service Benefits Section */}
             <div className="coaching-details__bottom">
               <div className="coaching-details__bottom-img mb-30" data-tilt>
-                <img src="/assets/img/service/service-details-bottom-img.png" alt="img not found" />
+                <Image src="/assets/img/service/service-details-bottom-img.png" alt="Study abroad benefits and support" width={800} height={450} />
               </div>
               <h3 className="mb-20 wow fadeInLeft animated" data-wow-delay=".8s">Our Benefits</h3>
               <p className="wow fadeInLeft animated" data-wow-delay=".9s">

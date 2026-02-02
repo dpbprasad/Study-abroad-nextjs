@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface University {
   id: string;
@@ -186,7 +187,7 @@ export default function CountriesSection() {
                             if (h5) h5.style.color = '';
                           }}
                         >
-                          <img src={university.logo} alt={university.name} />
+                          <Image src={university.logo} alt={`${university.name} logo`} width={80} height={80} />
                           <h5>{university.name}</h5>
                         </a>
                       ) : (
@@ -205,7 +206,7 @@ export default function CountriesSection() {
                             if (h5) h5.style.color = '';
                           }}
                         >
-                          <img src={university.logo} alt={university.name} />
+                          <Image src={university.logo} alt={`${university.name} logo`} width={80} height={80} />
                           <h5>{university.name}</h5>
                         </div>
                       )

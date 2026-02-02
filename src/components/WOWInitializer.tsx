@@ -3,51 +3,71 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+/**
+ * Framer Motion-based scroll animation initializer
+ * Drop-in replacement for WOW.js using modern CSS animations
+ * Works with existing data-wow-delay attributes
+ */
 export default function WOWInitializer() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Dynamically import WOW.js only on client side
-    const initWOW = async () => {
-      if (typeof window !== 'undefined') {
-        try {
-          // Remove wow classes from SVG elements and their children to prevent errors
-          const svgElements = document.querySelectorAll('svg.wow, svg .wow, svg *, svg');
-          svgElements.forEach((el) => {
-            if (el.tagName === 'svg' || el.tagName === 'SVG' || el instanceof SVGElement) {
-              el.classList.remove('wow', 'animated', 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'fadeInDown', 'fadeIn');
-            }
-          });
+    const initScrollAnimations = () => {
+      if (typeof window === 'undefined') return;
 
-          const WOW = (await import('wow.js')).default;
+      // Get all elements with wow class
+      const elements = document.querySelectorAll('.wow');
 
-          // Initialize WOW.js with custom filter to exclude SVG elements
-          const wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: true,
-            live: true,
-            scrollContainer: null,
-            resetAnimation: true,
-            callback: function(box: any) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const element = entry.target as HTMLElement;
+              const delay = element.getAttribute('data-wow-delay') || '0s';
+
               // Skip SVG elements
-              if (box instanceof SVGElement) {
+              if (element instanceof SVGElement) {
                 return;
               }
+
+              // Apply animation with delay
+              setTimeout(() => {
+                element.classList.add('animated');
+                element.style.visibility = 'visible';
+                element.style.animationName = element.classList.contains('fadeInLeft') ? 'fadeInLeft' :
+                                              element.classList.contains('fadeInRight') ? 'fadeInRight' :
+                                              element.classList.contains('fadeInUp') ? 'fadeInUp' :
+                                              element.classList.contains('fadeInDown') ? 'fadeInDown' :
+                                              'fadeIn';
+              }, parseFloat(delay) * 1000);
+
+              // Stop observing this element
+              observer.unobserve(element);
             }
           });
-
-          wow.init();
-        } catch (error) {
-          console.error('WOW.js initialization error:', error);
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
         }
-      }
+      );
+
+      // Observe all wow elements
+      elements.forEach((element) => {
+        if (!(element instanceof SVGElement)) {
+          (element as HTMLElement).style.visibility = 'hidden';
+          observer.observe(element);
+        }
+      });
+
+      // Cleanup function
+      return () => observer.disconnect();
     };
 
-    // Small delay to ensure DOM is ready
+    // Initialize after a small delay to ensure DOM is ready
     const timer = setTimeout(() => {
-      initWOW();
+      const cleanup = initScrollAnimations();
+      return cleanup;
     }, 100);
 
     return () => clearTimeout(timer);

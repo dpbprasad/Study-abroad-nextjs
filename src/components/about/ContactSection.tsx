@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ export default function ContactSection() {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="contact-us__widget mb-30" data-tilt>
-              <img src="/assets/imgs/contact/contact-left-img.png" alt="img not found" />
+              <Image src="/assets/imgs/contact/contact-left-img.png" alt="Contact our study abroad experts" width={600} height={700} />
             </div>
           </div>
           <div className="col-lg-6">

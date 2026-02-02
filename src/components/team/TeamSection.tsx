@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface TeamMember {
   name: string;
@@ -75,7 +76,7 @@ export default function TeamSection() {
             <div key={index} className="col-lg-4 col-md-6 col-sm-6">
               <div className="team__item mb-30 wow fadeInLeft animated" data-wow-delay={member.delay}>
                 <div className="team__item-media">
-                  <img src={member.image} alt="img not found" />
+                  <Image src={member.image} alt={`${member.name} - ${member.position}`} width={400} height={500} />
                 </div>
                 <div className="team__item-content d-flex justify-content-between">
                   <div className="team__item-content-text">

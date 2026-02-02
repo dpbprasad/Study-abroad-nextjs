@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function TeamDetailsContent() {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ export default function TeamDetailsContent() {
         <div className="row align-items-center">
           <div className="col-lg-5 col-md-6 col-sm-6">
             <div className="teamdetail__media" data-tilt>
-              <img src="/assets/img/team/team-name1.png" alt="img not found" />
+              <Image src="/assets/img/team/team-name1.png" alt="Ashikur Rahman - Medical Assistant" width={400} height={500} priority />
             </div>
           </div>
           <div className="col-lg-7 col-md-6 col-sm-6">

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -37,7 +38,7 @@ export default function ContactPage() {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="contact-us__widget mb-30" data-tilt>
-                <img src="/assets/imgs/contact/contact-left-img.png" alt="img not found" />
+                <Image src="/assets/imgs/contact/contact-left-img.png" alt="Contact Study Abroad consultants" width={600} height={700} priority />
               </div>
             </div>
             <div className="col-lg-6">
@@ -272,7 +273,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="tab-content">
-                    <img src="/assets/imgs/contact/contact-tap-img.png" alt="img not found" />
+                    <Image src="/assets/imgs/contact/contact-tap-img.png" alt="Office location and contact information" width={500} height={400} />
                   </div>
                 </div>
               </div>
@@ -363,7 +364,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="tab-content">
-                    <img src="/assets/imgs/contact/contact-tap-img.png" alt="img not found" />
+                    <Image src="/assets/imgs/contact/contact-tap-img.png" alt="Office location and contact information" width={500} height={400} />
                   </div>
                 </div>
               </div>
@@ -380,7 +381,7 @@ export default function ContactPage() {
                     {/* Office hours */}
                   </div>
                   <div className="tab-content">
-                    <img src="/assets/imgs/contact/contact-tap-img.png" alt="img not found" />
+                    <Image src="/assets/imgs/contact/contact-tap-img.png" alt="Office location and contact information" width={500} height={400} />
                   </div>
                 </div>
               </div>
@@ -395,7 +396,7 @@ export default function ContactPage() {
                     {/* Office hours */}
                   </div>
                   <div className="tab-content">
-                    <img src="/assets/imgs/contact/contact-tap-img.png" alt="img not found" />
+                    <Image src="/assets/imgs/contact/contact-tap-img.png" alt="Office location and contact information" width={500} height={400} />
                   </div>
                 </div>
               </div>

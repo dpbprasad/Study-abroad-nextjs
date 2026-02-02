@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
@@ -52,9 +53,11 @@ export default function TestimonialSection() {
         <div className="row align-items-center">
           <div className="col-lg-5">
             <div className="testimonial__media" ref={tiltRef}>
-              <img
+              <Image
                 src="/assets/img/testimonial/testimonial2-left-img.png"
-                alt="img not found"
+                alt="Happy student testimonial"
+                width={600}
+                height={700}
               />
             </div>
           </div>
@@ -72,7 +75,7 @@ export default function TestimonialSection() {
                     <p>The team guided me through every step of my study abroad journey, from university selection to visa application. Their expertise and dedication made my dream of studying in Canada a reality. I couldn't have done it without their support!</p>
                     <div className="testimonial__content-text-title">
                       <div className="testimonial__content-text-title-img">
-                        <img src="/assets/img/testimonial/testimonial-dp.png" alt="img not found" />
+                        <Image src="/assets/img/testimonial/testimonial-dp.png" alt="User profile" width={60} height={60} />
                       </div>
                       <div className="testimonial__content-text-title-name">
                         <h6>Sarah Johnson</h6>
@@ -93,7 +96,7 @@ export default function TestimonialSection() {
                     <p>Professional, responsive, and incredibly helpful! They helped me secure admission to my dream university in Australia and made the entire visa process stress-free. Their personalized approach really sets them apart from other consultants.</p>
                     <div className="testimonial__content-text-title">
                       <div className="testimonial__content-text-title-img">
-                        <img src="/assets/img/testimonial/testimonial-dp.png" alt="img not found" />
+                        <Image src="/assets/img/testimonial/testimonial-dp.png" alt="User profile" width={60} height={60} />
                       </div>
                       <div className="testimonial__content-text-title-name">
                         <h6>Michael Chen</h6>
@@ -114,7 +117,7 @@ export default function TestimonialSection() {
                     <p>I was overwhelmed with the application process, but this consultancy made everything so simple. From IELTS preparation tips to scholarship applications, they covered it all. Now I'm studying in the UK, living my dream!</p>
                     <div className="testimonial__content-text-title">
                       <div className="testimonial__content-text-title-img">
-                        <img src="/assets/img/testimonial/testimonial-dp.png" alt="img not found" />
+                        <Image src="/assets/img/testimonial/testimonial-dp.png" alt="User profile" width={60} height={60} />
                       </div>
                       <div className="testimonial__content-text-title-name">
                         <h6>Priya Sharma</h6>

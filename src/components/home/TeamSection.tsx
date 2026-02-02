@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function TeamSection() {
   const team = [
@@ -64,7 +65,7 @@ export default function TeamSection() {
           <div className="col-lg-6 d-flex">
             <div className="visa__item visa__item-2 d-flex align-items-center wow fadeInLeft animated" data-wow-delay=".2s" style={{ minHeight: '150px', width: '100%' }}>
               <div className="visa__item-media">
-                <img src={team[0].image} alt="img not found" />
+                <Image src={team[0].image} alt={team[0].name} width={150} height={150} />
               </div>
               <div className="visa__item-content">
                 <h5>{team[0].name}</h5>
@@ -73,7 +74,7 @@ export default function TeamSection() {
                   <Link href="/team-details">
                     <i className="fa-solid fa-arrow-right"></i>
                   </Link>
-                  <img src={team[0].icon} alt="img not found" />
+                  <Image src={team[0].icon} alt="Team icon" width={50} height={50} />
                 </div>
               </div>
             </div>
@@ -81,7 +82,7 @@ export default function TeamSection() {
           <div className="col-lg-6 d-flex">
             <div className="visa__item visa__item-2 d-flex align-items-center wow fadeInLeft animated" data-wow-delay=".3s" style={{ minHeight: '150px', width: '100%' }}>
               <div className="visa__item-media">
-                <img src={team[1].image} alt="img not found" />
+                <Image src={team[1].image} alt={team[1].name} width={150} height={150} />
               </div>
               <div className="visa__item-content">
                 <h5>{team[1].name}</h5>
@@ -90,7 +91,7 @@ export default function TeamSection() {
                   <Link href="/team-details">
                     <i className="fa-solid fa-arrow-right"></i>
                   </Link>
-                  <img src={team[1].icon} alt="img not found" />
+                  <Image src={team[1].icon} alt="Team icon" width={50} height={50} />
                 </div>
               </div>
             </div>
@@ -102,7 +103,7 @@ export default function TeamSection() {
           <div className="col-lg-6 d-flex">
             <div className="visa__item visa__item-2 d-flex align-items-center wow fadeInLeft animated" data-wow-delay=".4s" style={{ minHeight: '150px', width: '100%' }}>
               <div className="visa__item-media">
-                <img src={team[2].image} alt="img not found" />
+                <Image src={team[2].image} alt={team[2].name} width={150} height={150} />
               </div>
               <div className="visa__item-content">
                 <h5>{team[2].name}</h5>
@@ -111,7 +112,7 @@ export default function TeamSection() {
                   <Link href="/team-details">
                     <i className="fa-solid fa-arrow-right"></i>
                   </Link>
-                  <img src={team[2].icon} alt="img not found" />
+                  <Image src={team[2].icon} alt="Team icon" width={50} height={50} />
                 </div>
               </div>
             </div>
@@ -119,7 +120,7 @@ export default function TeamSection() {
           <div className="col-lg-6 d-flex">
             <div className="visa__item visa__item-2 d-flex align-items-center wow fadeInLeft animated" data-wow-delay=".5s" style={{ minHeight: '150px', width: '100%' }}>
               <div className="visa__item-media">
-                <img src={team[3].image} alt="img not found" />
+                <Image src={team[3].image} alt={team[3].name} width={150} height={150} />
               </div>
               <div className="visa__item-content">
                 <h5>{team[3].name}</h5>
@@ -128,7 +129,7 @@ export default function TeamSection() {
                   <Link href="/team-details">
                     <i className="fa-solid fa-arrow-right"></i>
                   </Link>
-                  <img src={team[3].icon} alt="img not found" />
+                  <Image src={team[3].icon} alt="Team icon" width={50} height={50} />
                 </div>
               </div>
             </div>

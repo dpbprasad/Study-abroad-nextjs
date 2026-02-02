@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -58,10 +59,12 @@ export default function UniversityLogos({ grayBg = true }: UniversityLogosProps)
                     <SwiperSlide key={index}>
                       <div className="brand__item text-center wow fadeIn animated" data-wow-delay={`.${index + 1}s`}>
                         <div className="brand__thumb">
-                          <img
+                          <Image
                             className="img-fluid"
                             src={uni.logo}
                             alt={uni.name}
+                            width={150}
+                            height={52}
                             style={{
                               height: '52px',
                               width: 'auto',

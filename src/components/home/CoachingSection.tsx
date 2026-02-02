@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect } from 'react';
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
@@ -125,7 +126,7 @@ export default function CoachingSection() {
                       <div className="latest-team__item-media">
                         <div className="latest-item_thumb">
                           <Link href="/coaching-details">
-                            <img src={program.image} alt="images not found" className="img-fluid" />
+                            <Image src={program.image} alt={`${program.title} - Test preparation coaching`} width={400} height={300} className="img-fluid" />
                           </Link>
                         </div>
                         <div className="latest-team__item-media-img-title d-flex">

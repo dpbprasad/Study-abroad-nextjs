@@ -6,7 +6,14 @@
       "Bash(git rm:*)",
       "Bash(vercel --version:*)",
       "Bash(npm i:*)",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd complete admin panel for Services, Blog, Testimonials, and Team management\n\nImplemented full CRUD functionality for all remaining admin sections:\n\nServices Management:\n- API routes with full CRUD operations \\(GET, POST, PATCH, DELETE\\)\n- Admin pages for list, add, and edit services\n- Support for features array and display ordering\n- 7 pre-loaded services \\(Overview, Consultation, Program Finding, Documentation, OET, IELTS, TOEFL\\)\n\nBlog Management:\n- Enhanced blog API with POST endpoint for creating posts\n- Dynamic route for individual blog operations \\(GET, PATCH, DELETE\\)\n- Admin pages with search and category filtering\n- Rich content editor support with draft/publish status\n- Statistics dashboard \\(total posts, published, comments\\)\n- 6 sample blog posts with 8 category options\n\nTestimonials Management:\n- Complete API routes for testimonial CRUD operations\n- Admin interface with featured flag support\n- Background style options \\(white/gray\\)\n- Search functionality across name, role, and text\n\nTeam Management:\n- API routes for team member management\n- Admin pages with contact information fields \\(email, phone\\)\n- Display ordering and profile image support\n- 4 pre-loaded team members\n\nAll sections follow consistent admin UI patterns with:\n- Responsive table layouts\n- Search and filter capabilities\n- Status badges and visual indicators\n- Form validation and error handling\n- Success notifications\n- Mobile-friendly design\n\nData is stored in-memory for easy development and testing, ready for future database migration.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
