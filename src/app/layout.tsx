@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Sofia } from "next/font/google";
 import Script from "next/script";
-import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 
 // Optimize Google Fonts with next/font
@@ -35,6 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={sofia.variable}>
+      <head>
+        <link rel="stylesheet" href="/assets/css/vendor/animate.min.css" />
+        <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+        <link rel="stylesheet" href="/assets/css/vendor/fontawesome-pro.css" />
+        <link rel="stylesheet" href="/assets/css/vendor/spacing.css" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+      </head>
       <body suppressHydrationWarning>
         <LayoutWrapper>{children}</LayoutWrapper>
 
